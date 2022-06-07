@@ -5,7 +5,7 @@
 LUDS ( PHP Digital Signage ), um simples CMS (Content Management System) com Digital Signage Player Software via navegador: 
 
 Veja esta documentação em outros idiomas:
-- :us: [English version]
+- :us: [English version](../README.md)
 - :brazil: [versão em português disponível](README_pt-BR.md). Esta é a documentação principal. Isso se traduz em outros idiomas
 - :es: [versão em espanhol disponível](README_es.md), traduzido pelo Google
 

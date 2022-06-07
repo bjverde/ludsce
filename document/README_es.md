@@ -1,15 +1,15 @@
 # LUDS
 
-![visão geral](document/digital-signage.png)
+![visão geral](digital-signage.png)
 
 LUDS es un CMS (Sistema de gestión de contenido) simple en PHP para señalización digital con un reproductor web en el navegador.
 
 Consulte esta documentación en otros idiomas:
-- :us: [versión en inglés]
+- :us: [versión en inglés](../README.md)
 - :brazil: [Versión en portugués disponible](README_pt-BR.md). Esta es la documentación principal. Esto se traduce a los otros idiomas.
 - :es: [Versión en español disponible](README_es.md),traducido por Google
 
-![visão geral](document/exemplo01.jpg)
+![visão geral](exemplo01.jpg)
 
 # Requisitos
 * PHP 7.4 ou superior
