@@ -48,3 +48,4 @@ Veja mais informações sobre:
 # Concorrentes 
 
 * Hikvision Europe - https://www.youtube.com/channel/UCRY0VuF6yFucrTqMfZk6Bng
+* https://www.concerto-signage.org/
