@@ -45,7 +45,10 @@ Veja mais informações sobre:
 1. Pronto !!
 
 
-# Concorrentes 
+# Similar Software 
 
-* Hikvision Europe - https://www.youtube.com/channel/UCRY0VuF6yFucrTqMfZk6Bng
-* https://www.concerto-signage.org/
+| Name             	| Site                                                     	| GitHub                        	| Description 	|   	|
+|------------------	|----------------------------------------------------------	|-------------------------------	|-------------	|---	|
+| Hikvision Europe 	| https://www.youtube.com/channel/UCRY0VuF6yFucrTqMfZk6Bng 	|                               	|             	|   	|
+| smil control     	| https://smil-control.com/                                	| https://github.com/sagiadinos 	|             	|   	|
+|                  	|                                                          	|                               	|             	|   	|
