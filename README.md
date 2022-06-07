@@ -47,8 +47,10 @@ Veja mais informações sobre:
 
 # Similar Software 
 
-| Name             	| Site                                                     	| GitHub                        	| Description 	|   	|
-|------------------	|----------------------------------------------------------	|-------------------------------	|-------------	|---	|
-| Hikvision Europe 	| https://www.youtube.com/channel/UCRY0VuF6yFucrTqMfZk6Bng 	|                               	|             	|   	|
-| smil control     	| https://smil-control.com/                                	| https://github.com/sagiadinos 	|             	|   	|
-|                  	|                                                          	|                               	|             	|   	|
+| Name             	| Site                                                     	| GitHub                                    	| Description                          	|
+|------------------	|----------------------------------------------------------	|-------------------------------------------	|--------------------------------------	|
+| Xibo             	| https://xibo.org.uk/                                     	|                                           	| Most Famous software Digital Display 	|
+| Hikvision Europe 	| https://www.youtube.com/channel/UCRY0VuF6yFucrTqMfZk6Bng 	|                                           	|                                      	|
+|                  	|                                                          	|                                           	|                                      	|
+| smil control     	| https://smil-control.com/                                	| https://github.com/sagiadinos             	|                                      	|
+| CampusVision     	| https://johnsonlm.com/CampusVision/                      	| https://github.com/JohnsonLM/CampusVision 	|                                      	|
