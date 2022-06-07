@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" type="image/png" href="app/templates/{template}/img/favicon.png"/>
+    <title>{head_title}</title>    
+    <link rel="manifest" href="manifest.json?appver=701">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link rel="apple-touch-icon" sizes="180x180" href="app/images/icon.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    
+    {LIBRARIES}
+    {HEAD}
+    
+    <link href="app/lib/include/admin.min.css?appver=701" rel="stylesheet" type="text/css" media="screen">
+    <link rel="stylesheet" href="app/templates/{template}/css/AdminLTE.min.css">
+    <!-- AdminLTE Skins. Choose a skin from the css/skins folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href="app/templates/{template}/css/skins/_all-skins.min.css">
+  </head>
+  <body>
+        <nav class="main-header navbar navbar-light bg-light fixed-top" role="navigation" style="margin-bottom: 0; text-align:center">
+            <a class="navbar-brand" href="{login-link}">{head_title}</a>
+        </nav>
+        
+        <div id="wrapper" style="width:90%;margin:auto;margin-top:10px">
+            <div id="adianti_div_content"></div>
+            <div id="adianti_online_content"></div>
+            <div id="adianti_online_content2"></div>
+        </div>
+        <div style="text-align:center">
+            <!--[CREATE-ACCOUNT]--> <a href="index.php?class=LoginForm"><i class="fas fa-sign-in-alt" aria-hidden="true"></i> _t{Login}</a> <!--[/CREATE-ACCOUNT]-->
+            &nbsp;&nbsp;
+            <!--[CREATE-ACCOUNT]--> <a href="index.php?class=SystemRegistrationForm"><i class="fa fa-user-plus green" aria-hidden="true"></i> _t{Create account}</a> <!--[/CREATE-ACCOUNT]-->
+            &nbsp;&nbsp;
+            <!--[RESET-PASSWORD]--> <a href="index.php?class=SystemRequestPasswordResetForm"><i class="fa fa-eraser orange" aria-hidden="true"></i> _t{Reset password}</a> <!--[/RESET-PASSWORD]-->
+        </div>
+        
+        <a class="little-float-button bg-yellow" title="PHP Modules" href="index.php?class=SystemModulesCheckView" style="pointer-events: auto;">
+            <i class="fa fa-cog internal-float-button"></i>
+        </a>
+        
+        <!-- /#wrapper -->
+    </body>
+</html>

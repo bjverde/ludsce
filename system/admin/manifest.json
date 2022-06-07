@@ -1,0 +1,14 @@
+{
+  "short_name": "Adianti Template",
+  "name": "Adianti Template",
+  "icons": [
+    {
+      "src": "app/images/icon.png",
+      "type": "image/png",
+      "sizes": "180x180"
+    }
+  ],
+  "background_color": "#fff",
+  "display": "standalone",
+  "theme_color": "#FFFFFF"
+}
