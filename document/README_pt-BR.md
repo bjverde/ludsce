@@ -31,9 +31,8 @@ Veja mais informações sobre:
 * Adianti Template 7.4.X
 
 # O que tem em cada pasta
-
 * Document - tem apenas imagens e texto auxiliar
-* system - é sistema web propriamente dito
+* system - é o sistema propriamente dito. Com parte externa é web player e a parte administrativa.
 
 # Montanto o Ambiente
 

@@ -4,24 +4,16 @@
 
 LUDS is a simple CMS (Content Management System) in PHP for Digital Signage with a web player in browser.
 
+Community Edition
+
 See this documentation in other languages:
 - :us: [English version](README.md)
 - :brazil: [Portuguese version available](document/README_pt-BR.md). This is main documentation. This translates to the other languages
 - :es: [Spanish version available](document/README_es.md), translated by Google
 
-
-* midía tv
-* tv coorporativa
-* painéis digitais
-* murais digitais 
-
-Veja mais informações sobre: 
-* https://www.voxeldigital.com.br/blog/como-funciona-publicacao-digital-signage/
-* O que é um CMS - https://www.hostinger.com.br/tutoriais/o-que-e-cms
-
 ![visão geral](document/exemplo01.jpg)
 
-# Requisitos
+# Requirements
 * PHP 7.4 ou superior
 * HTML 5
 * CSS 3
@@ -30,10 +22,10 @@ Veja mais informações sobre:
 * Jquery 3.6
 * Adianti Template 7.4.X
 
-# O que tem em cada pasta
-
-* Document - tem apenas imagens e texto auxiliar
-* system - é sistema web propriamente dito
+# What's in each folder
+* database - 
+* document - documentation with everything that is part
+* system   - is the system itself. With the external part is the web player and the administrative part.
 
 # Montanto o Ambiente
 
