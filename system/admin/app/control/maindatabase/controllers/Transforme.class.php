@@ -108,8 +108,11 @@ class Transforme
 
     public static function gridImg($value, $object, $row)
     {
-        if (file_exists($value)) 
-        {
+        if (file_exists($value)){
+            $arquivo = explode('.',$value);
+            if( $arquivo[3]=='mp4' ){
+                $value=Constantes::IMG_PATH.'../../icone_video.png';
+            }
             $image = new TImage($value);
             $image->style = 'max-width: 100px';
             return $image;
