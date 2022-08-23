@@ -47,7 +47,6 @@ _*
 **/app/database/log.sql
 **/app/database/permission-update.sql
 **/app/database/permission.asta
-**/app/database/permission.db
 **/app/database/permission.sql
 **/app/database/permission.xml
 **/app/database/unit_a.db
