@@ -2,14 +2,21 @@
 
 ![visão geral](document/digital-signage.png)
 
-LUDS is a simple CMS (Content Management System) in PHP for Digital Signage with a web player in browser.
+LUDS ( PHP Digital Signage ), a simple Digital Signage with Player Software via browser:
 
-Community Edition
+This is Community Edition, free software
 
 See this documentation in other languages:
 - :us: [English version](README.md)
 - :brazil: [Portuguese version available](document/README_pt-BR.md). This is main documentation. This translates to the other languages
 - :es: [Spanish version available](document/README_es.md), translated by Google
+
+other known names
+* indoor media
+* tv media
+* corporate tv
+* digital panels
+* digital murals
 
 ![visão geral](document/exemplo01.jpg)
 

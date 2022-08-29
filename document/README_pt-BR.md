@@ -4,15 +4,17 @@
 
 LUDS ( PHP Digital Signage ), um simples Digital Signage com Player Software via navegador: 
 
+Essa é versão da comunidade, um software livre
+
 Veja esta documentação em outros idiomas:
 - :us: [English version](../README.md)
 - :brazil: [versão em português disponível](README_pt-BR.md). Esta é a documentação principal. Isso se traduz em outros idiomas
 - :es: [versão em espanhol disponível](README_es.md), traduzido pelo Google
 
-outros nome conhecidos
-* midía indor
+outros nomes conhecidos
+* midía indoor
 * midía tv
-* tv coorporativa
+* tv corporativa
 * painéis digitais
 * murais digitais 
 
