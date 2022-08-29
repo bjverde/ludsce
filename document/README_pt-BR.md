@@ -37,7 +37,7 @@ Veja mais informações sobre:
 * Document - tem apenas imagens e texto auxiliar
 * system - é o sistema propriamente dito. Com duas partes:  A externa que web player e a interna administrativa que será acessa na URL `/admin`
 
-# Montanto o Ambiente
+# Montando aplicação na web
 
 1. Clona o projeto localmente ou servidor.
 1. Baixar o [Adianti Template 7.4.1 ou superior](https://www.adianti.com.br/framework-download) e copiar o conteúdo do template na pasta `ludsce\system\admin`. *As pastas podem ser mescaladas. Porém NÃO SUBSTITUIR qualquer arquivo*
@@ -50,4 +50,9 @@ Veja mais informações sobre:
 
 # Concorrentes 
 
-* Hikvision Europe - https://www.youtube.com/channel/UCRY0VuF6yFucrTqMfZk6Bng
+| Name             | Site                                                     | GitHub                                    | Description                          |
+|------------------|----------------------------------------------------------|-------------------------------------------|--------------------------------------|
+| Xibo             | https://xibo.org.uk/                                     |                                           | Most Famous software Digital Display |
+| Hikvision Europe | https://www.youtube.com/channel/UCRY0VuF6yFucrTqMfZk6Bng |                                           |                                      |
+| smil control     | https://smil-control.com/                                | https://github.com/sagiadinos             |                                      |
+| CampusVision     | https://johnsonlm.com/CampusVision/                      | https://github.com/JohnsonLM/CampusVision |  

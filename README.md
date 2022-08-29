@@ -37,14 +37,15 @@ See more information about:
 * Document - has only images and auxiliary text
 * system - is the system itself. With two parts: The external one that web player and the internal administrative that will be accessed in the URL `/admin`
 
-# Montanto o Ambiente
+# Assembling web application
 
-1. PHP 7.3.x ou superior, instalado e configurado com PDO SqLite
-1. Clona o projeto
-1. Baixar o [Adianti Template 7.4.1 ou superior](https://www.adianti.com.br/framework-download) e copiar o conteúdo da pasta para `system\admin`. *As pastas podem ser mescaladas. Porém NÃO SUBSTITUIR qualquer arquivo*
-1. [Instalar o FormDin5 sobre o Adianti Template 7.4.0 ou superior](https://github.com/bjverde/formDin5#instala%C3%A7%C3%A3o)
-1. Abrir VsCode e ir para controle de versão. *Descarta qualquer alteração ou arquivos novos*
-1. Pronto !!
+1. Clone the project locally or server.
+1. Download [Adianti Template 7.4.1 or higher](https://www.adianti.com.br/framework-download) and copy the template content in the `ludsce\system\admin` folder. *Folders can be merged. But DO NOT REPLACE any file*
+1. [Install FormDin5 over Adianti Template 7.4.0 or higher, as directed](https://github.com/bjverde/formDin5#instala%C3%A7%C3%A3o)
+1. Check with git if any files have changed. *Discard any changes or new files*
+1. Have a PHP 7.4.x server or higher, installed and configured with PDO SqLite
+1. Deploy the system to the PHP server.
+1. Ready, just access the system
 
 
 # Similar Software 
