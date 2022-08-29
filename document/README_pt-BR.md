@@ -2,21 +2,22 @@
 
 ![visão geral](digital-signage.png)
 
-LUDS ( PHP Digital Signage ), um simples CMS (Content Management System) com Digital Signage Player Software via navegador: 
+LUDS ( PHP Digital Signage ), um simples Digital Signage com Player Software via navegador: 
 
 Veja esta documentação em outros idiomas:
 - :us: [English version](../README.md)
 - :brazil: [versão em português disponível](README_pt-BR.md). Esta é a documentação principal. Isso se traduz em outros idiomas
 - :es: [versão em espanhol disponível](README_es.md), traduzido pelo Google
 
-
+outros nome conhecidos
+* midía indor
 * midía tv
 * tv coorporativa
 * painéis digitais
 * murais digitais 
 
 Veja mais informações sobre: 
-* https://www.voxeldigital.com.br/blog/como-funciona-publicacao-digital-signage/
+* Como funcioa um Digital Signage - https://www.voxeldigital.com.br/blog/como-funciona-publicacao-digital-signage/
 * O que é um CMS - https://www.hostinger.com.br/tutoriais/o-que-e-cms
 
 ![visão geral](exemplo01.jpg)
@@ -32,16 +33,18 @@ Veja mais informações sobre:
 
 # O que tem em cada pasta
 * Document - tem apenas imagens e texto auxiliar
-* system - é o sistema propriamente dito. Com parte externa é web player e a parte administrativa.
+* system - é o sistema propriamente dito. Com parte externa que web player e a parte administrativa.
+** admin - é o sistema admin feito em Adianti FrameWork 
 
 # Montanto o Ambiente
 
-1. PHP 7.3.x ou superior, instalado e configurado com PDO SqLite
-1. Clona o projeto
-1. Baixar o [Adianti Template 7.4.1 ou superior](https://www.adianti.com.br/framework-download) e copiar o conteúdo da pasta para `system\admin`. *As pastas podem ser mescaladas. Porém NÃO SUBSTITUIR qualquer arquivo*
-1. [Instalar o FormDin5 sobre o Adianti Template 7.4.0 ou superior](https://github.com/bjverde/formDin5#instala%C3%A7%C3%A3o)
-1. Abrir VsCode e ir para controle de versão. *Descarta qualquer alteração ou arquivos novos*
-1. Pronto !!
+1. Clona o projeto localmente ou servidor.
+1. Baixar o [Adianti Template 7.4.1 ou superior](https://www.adianti.com.br/framework-download) e copiar o conteúdo do template na pasta `ludsce\system\admin`. *As pastas podem ser mescaladas. Porém NÃO SUBSTITUIR qualquer arquivo*
+1. [Instalar o FormDin5 sobre o Adianti Template 7.4.0 ou superior, conforme orientação](https://github.com/bjverde/formDin5#instala%C3%A7%C3%A3o)
+1. Vericar com o git, se algum arquivo foi alterado. *Descarta qualquer alteração ou arquivos novos*
+1. Ter um servidor PHP 7.4.x ou superior, instalado e configurado com PDO SqLite
+1. Realizar o deploy do sitema para o servidor PHP. 
+1. Pronto, bastar acessar o sistema
 
 
 # Concorrentes 
