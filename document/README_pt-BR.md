@@ -35,8 +35,7 @@ Veja mais informações sobre:
 
 # O que tem em cada pasta
 * Document - tem apenas imagens e texto auxiliar
-* system - é o sistema propriamente dito. Com parte externa que web player e a parte administrativa.
-** admin - é o sistema admin feito em Adianti FrameWork 
+* system - é o sistema propriamente dito. Com duas partes:  A externa que web player e a interna administrativa que será acessa na URL `/admin`
 
 # Montanto o Ambiente
 

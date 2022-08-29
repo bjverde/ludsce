@@ -18,6 +18,10 @@ other known names
 * digital panels
 * digital murals
 
+See more information about:
+* How a Digital Signage works - https://www.voxeldigital.com.br/blog/como-funciona-publicacao-digital-signage/
+* What is a CMS - https://www.hostinger.com.br/tutorials/o-que-e-cms
+
 ![visão geral](document/exemplo01.jpg)
 
 # Requirements
@@ -30,9 +34,8 @@ other known names
 * Adianti Template 7.4.X
 
 # What's in each folder
-* database - 
-* document - documentation with everything that is part
-* system   - is the system itself. With the external part is the web player and the administrative part.
+* Document - has only images and auxiliary text
+* system - is the system itself. With two parts: The external one that web player and the internal administrative that will be accessed in the URL `/admin`
 
 # Montanto o Ambiente
 
