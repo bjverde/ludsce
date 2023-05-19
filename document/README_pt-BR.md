@@ -34,7 +34,8 @@ Veja mais informações sobre:
 * Adianti Template 7.4.X
 
 # O que tem em cada pasta
-* Document - tem apenas imagens e texto auxiliar
+* database - scripts SQL para criar o banco de dados. Script de permissões extras
+* document - documentação com imagens e texto auxiliar.
 * system - é o sistema propriamente dito. Com duas partes:  A externa que web player e a interna administrativa que será acessa na URL `/admin`
 
 # Montando aplicação na web
@@ -44,9 +45,10 @@ Veja mais informações sobre:
 1. [Instalar o FormDin5 sobre o Adianti Template 7.4.0 ou superior, conforme orientação](https://github.com/bjverde/formDin5#instala%C3%A7%C3%A3o)
 1. Vericar com o git, se algum arquivo foi alterado. *Descarta qualquer alteração ou arquivos novos*
 1. Ter um servidor PHP 8.0.x ou superior, instalado e configurado com PDO SqLite.
-1. Realizar o deploy da pasta `system` com o nome `ludsce` sitema para o servidor PHP. 
+1. No servidor PHP criar a pasta `ludsce`
+1. Copiar o conteudo da pasta `system` para a `ludsce` criada no item anterior.
 1. Pronto, bastar acessar o sistema
-    1. Parte externo a pública: http://SERVIDOR/ludsce/
+    1. Parte externa que vai passar nas tvs,  http://SERVIDOR/ludsce/
     1. Parte administrativa : http://SERVIDOR/ludsce/admin
 
 
