@@ -50,6 +50,10 @@ Veja mais informações sobre:
     1. Parte administrativa : http://SERVIDOR/ludsce/admin
 
 
+usuario | senha | perfil
+------ | ------------------ | --------------------
+admin | admin | é super usuário pode fazer tudo no sistema. 
+
 # Concorrentes 
 
 | Name             | Site                                                     | GitHub                                    | Description                          |
