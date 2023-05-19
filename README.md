@@ -34,19 +34,26 @@ See more information about:
 * Adianti Template 7.4.X
 
 # What's in each folder
-* Document - has only images and auxiliary text
-* system - is the system itself. With two parts: The external one that web player and the internal administrative that will be accessed in the URL `/admin`
+* database - SQL script to create the database see `maindatabase.sql` file. Extra permissions script see `permission-inserts-complemento.sql` file
+* document - documentation with images and auxiliary text.
+* system - is the system itself. With two parts: The external one, which is the web player, and the internal administrative one, which will be accessed at the URL `/admin`
 
 # Assembling web application
 
-1. Clone the project locally or server.
-1. Download [Adianti Template 7.4.1 or higher](https://www.adianti.com.br/framework-download) and copy the template content in the `ludsce\system\admin` folder. *Folders can be merged. But DO NOT REPLACE any file*
+1. Clone the project locally or on the server.
+1. Download [Adianti Template 7.5.1 fork or higher](https://github.com/bjverde/adianti-fork-template) and copy the template content in the `ludsce\system\admin` folder. *Folders can be merged. But DO NOT REPLACE any *. Note you can use the original [Adianti Temaplate 7.5.1](https://www.adianti.com.br/framework-download)
 1. [Install FormDin5 over Adianti Template 7.4.0 or higher, as directed](https://github.com/bjverde/formDin5#instala%C3%A7%C3%A3o)
-1. Check with git if any files have changed. *Discard any changes or new files*
-1. Have a PHP 7.4.x server or higher, installed and configured with PDO SqLite
-1. Deploy the system to the PHP server.
-1. Ready, just access the system
+1. Check with git if any files have changed. *Discards any changes or new files*
+1. Have a PHP 8.0.x server or higher, installed and configured with PDO SqLite.
+1. On the PHP server create the `ludsce` folder
+1. Copy the contents of the `system` folder to the `ludsce` created in the previous item.
+1. That's it, just access the system
+     1. External part that will be shown on TVs, http://SERVIDOR/ludsce/
+     1. Administrative part: http://SERVIDOR/ludsce/admin
 
+user | password | profile
+------ | ------------------ | --------------------
+admin | admin | it is super user can do everything in the system.
 
 # Similar Software 
 | Name             | Site                                                     | GitHub                                    | Description                          |
