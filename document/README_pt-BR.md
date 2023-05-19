@@ -44,8 +44,10 @@ Veja mais informações sobre:
 1. [Instalar o FormDin5 sobre o Adianti Template 7.4.0 ou superior, conforme orientação](https://github.com/bjverde/formDin5#instala%C3%A7%C3%A3o)
 1. Vericar com o git, se algum arquivo foi alterado. *Descarta qualquer alteração ou arquivos novos*
 1. Ter um servidor PHP 8.0.x ou superior, instalado e configurado com PDO SqLite.
-1. Realizar o deploy do sitema para o servidor PHP. 
+1. Realizar o deploy da pasta `system` com o nome `ludsce` sitema para o servidor PHP. 
 1. Pronto, bastar acessar o sistema
+    1. Parte externo a pública: http://SERVIDOR/ludsce/
+    1. Parte administrativa : http://SERVIDOR/ludsce/admin
 
 
 # Concorrentes 
