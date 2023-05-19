@@ -40,7 +40,7 @@ Veja mais informações sobre:
 # Montando aplicação na web
 
 1. Clona o projeto localmente ou servidor.
-1. Baixar o [Adianti Template 7.4.1 ou superior](https://www.adianti.com.br/framework-download) e copiar o conteúdo do template na pasta `ludsce\system\admin`. *As pastas podem ser mescaladas. Porém NÃO SUBSTITUIR qualquer arquivo*
+1. Baixar o [Adianti Template 7.5.1 fork ou superior](https://github.com/bjverde/adianti-fork-template) e copiar o conteúdo do template na pasta `ludsce\system\admin`. *As pastas podem ser mescaladas. Porém NÃO SUBSTITUIR qualquer arquivo*. Observação vc pode usar o [Adianti Temaplate 7.5.1](https://www.adianti.com.br/framework-download) original
 1. [Instalar o FormDin5 sobre o Adianti Template 7.4.0 ou superior, conforme orientação](https://github.com/bjverde/formDin5#instala%C3%A7%C3%A3o)
 1. Vericar com o git, se algum arquivo foi alterado. *Descarta qualquer alteração ou arquivos novos*
 1. Ter um servidor PHP 7.4.x ou superior, instalado e configurado com PDO SqLite
