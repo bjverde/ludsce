@@ -34,7 +34,7 @@ Veja mais informações sobre:
 * Adianti Template 7.4.X
 
 # O que tem em cada pasta
-* database - scripts SQL para criar o banco de dados. Script de permissões extras
+* database - script SQL para criar o banco de dados ver arquivo `maindatabase.sql`. Script de permissões extras ver arquivo `permission-inserts-complemento.sql`
 * document - documentação com imagens e texto auxiliar.
 * system - é o sistema propriamente dito. Com duas partes:  A externa que web player e a interna administrativa que será acessa na URL `/admin`
 
