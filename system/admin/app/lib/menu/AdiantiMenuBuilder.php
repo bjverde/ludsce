@@ -127,7 +127,7 @@ class AdiantiMenuBuilder
                 $menu->add($li);
                 
                 $menu->class = 'list';
-                $menu->style = 'overflow: hidden; width: auto; height: 390px;';
+                $menu->style = 'overflow: hidden; width: auto;';
                 $menu->show();
                 $menu_string = ob_get_clean();
                 return $menu_string;
