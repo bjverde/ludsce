@@ -40,11 +40,11 @@ Veja mais informações sobre:
 
 # Montando aplicação na web
 
-1. Clona o projeto localmente ou servidor.
-1. Baixar o [Adianti Template 7.5.1 fork ou superior](https://github.com/bjverde/adianti-fork-template) e copiar o conteúdo do template na pasta `ludsce\system\admin`. *As pastas podem ser mescaladas. Porém NÃO SUBSTITUIR qualquer arquivo*. Observação vc pode usar o [Adianti Temaplate 7.5.1](https://www.adianti.com.br/framework-download) original
-1. [Instalar o FormDin5 sobre o Adianti Template 7.4.0 ou superior, conforme orientação](https://github.com/bjverde/formDin5#instala%C3%A7%C3%A3o)
+1. Clona o projeto localmente ou servidor. Pode ser baixar o zip. Se não sabe fazer sigua o tutorial [Baixando o formDin](https://github.com/bjverde/formDin/wiki/Baixando-o-formDin)
+1. Baixar o [Adianti Template 7.5.1 fork ou superior](https://github.com/bjverde/adianti-fork-template) e copiar o conteúdo do template na pasta `ludsce\system\admin`. *As pastas podem ser mescaladas. Porém NÃO PODE SUBSTITUIR qualquer arquivo*. Observação vc pode usar o [Adianti Temaplate 7.5.1](https://www.adianti.com.br/framework-download) original
+1. [Instalar o FormDin5 sobre o Adianti Template 7.5.1 ou superior, conforme orientação](https://github.com/bjverde/formDin5#instala%C3%A7%C3%A3o)
 1. Vericar com o git, se algum arquivo foi alterado. *Descarta qualquer alteração ou arquivos novos*
-1. Ter um servidor PHP 8.0.x ou superior, instalado e configurado com PDO SqLite.
+1. Ter um servidor PHP 8.0.x ou superior, instalado e configurado com PDO SqLite. Pode ser um servidor local (wamp, lamp etc), Docker, Nuvem, VPS ou Hospedagem. Pode Apache ou Nginx. Se não sabe montar um servidor web php no windows veja o vídeo [Tutorial Instalação do WampServer](https://www.youtube.com/watch?v=fupmd0W1wtE) 
 1. No servidor PHP criar a pasta `ludsce`
 1. Copiar o conteudo da pasta `system` para a `ludsce` criada no item anterior.
 1. Pronto, bastar acessar o sistema
