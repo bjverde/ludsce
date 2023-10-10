@@ -57,7 +57,8 @@ _*
 **/app/lib/barcode
 **/app/lib/html
 **/app/lib/include
-**/app/lib/menu/
+**/app/lib/menu/ApplicationMenuEditorItemRenderer.php
+**/app/lib/menu/ApplicationMenuEditorRenderer.php
 **/app/lib/pdf
 **/app/lib/reports
 /app/lib/util/AdiantiRouteTranslator.php
