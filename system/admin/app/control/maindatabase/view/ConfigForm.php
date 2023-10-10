@@ -93,7 +93,7 @@ class ConfigForm extends TPage
 
         $row4 = $this->form->addFields([new TLabel("Logo file:", null, '14px', null)],[$logo_file],[new TLabel("Show clock:", '#FF0000', '14px', null, '100%')],[$show_clock]);
         $row5 = $this->form->addContent([new TFormSeparator("Geral", '#333', '18', '#eee')]);
-        $row6 = $this->form->addFields([new TLabel("Full Screen:", '#ff0000', '14px', null, '100%'),$fullscreen],[new TLabel("Show info:", '#FF0000', '14px', null, '100%'),$show_info],[new TLabel("Data interval:", '#ff0000', '14px', null, '100%'),$interval]);
+        $row6 = $this->form->addFields([new TLabel("Full Screen:", '#ff0000', '14px', null, '100%'),$fullscreen],[new TLabel("Show info:", '#FF0000', '14px', null, '100%'),$show_info],[new TLabel("Data interval (in milliseconds):", '#ff0000', '14px', null, '100%'),$interval]);
         $row6->layout = ['col-sm-3',' col-sm-3',' col-sm-6'];
 
 
