@@ -27,7 +27,7 @@ function clock(showTitleBar,showClock)
 {
     if(showTitleBar=='Y' && showClock=='Y'){
         var clock = document.getElementById('clock');
-        var dataHora = ( (new Date).toLocaleString().substr(0, 16) );
+        var dataHora = ( (new Date).toLocaleString().substr(0, 17) );
         setInterval(function () {
             clock.innerHTML = dataHora;
         }, 1000);
