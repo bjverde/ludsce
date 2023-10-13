@@ -129,6 +129,9 @@ class ArquivosList extends TPage
             return Transforme::gridDateTime($value, $object, $row);
         });        
         $column_nmlogin_alteracao = new TDataGridColumn('nmlogin_alteracao', "Login Alteração", 'left');
+        $column_nmlogin_alteracao->setTransformer(function($value, $object, $row){
+            return Transforme::getLogin($value, $object, $row);
+        });          
         $column_dt_alteracao = new TDataGridColumn('dt_alteracao', "Data Alteração", 'left');
         $column_dt_alteracao->setTransformer(function($value, $object, $row){
             return Transforme::gridDateTime($value, $object, $row);
