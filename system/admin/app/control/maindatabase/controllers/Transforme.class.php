@@ -134,5 +134,9 @@ class Transforme
     public static function gridDateTime($value, $object, $row)
     {
         return  self::dateTime($value);
-    } 
+    }
+    public static function getLogin($value, $object, $row)
+    {
+        return  SystemUserController::getNomeUsuario($value);
+    }     
 }
