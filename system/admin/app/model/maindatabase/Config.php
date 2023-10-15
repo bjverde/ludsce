@@ -22,6 +22,5 @@ class Config extends TRecord
         parent::addAttribute('show_clock');
         parent::addAttribute('interval');
         parent::addAttribute('show_info');
-        parent::addAttribute('fullscreen');
     }   
 }
