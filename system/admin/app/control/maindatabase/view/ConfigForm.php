@@ -37,36 +37,30 @@ class ConfigForm extends TPage
         $color_name = new TColor('color_name');
         $logo_file = new TFile('logo_file');
         $show_clock = new TRadioGroup('show_clock');
-        $fullscreen = new TRadioGroup('fullscreen');
         $show_info = new TRadioGroup('show_info');
         $interval = new TNumeric('interval', '0', ',', '.' );
 
         $show_title_bar->addValidation("Show title bar", new TRequiredValidator()); 
 
 
-        $fullscreen->addValidation("Full Screen", new TRequiredValidator()); 
         $show_info->addValidation("Show info", new TRequiredValidator()); 
         $interval->addValidation("Data interval", new TRequiredValidator()); 
 
         $logo_file->enableImageGallery('', 100);
         $logo_file->enableFileHandling();
         $show_info->addItems(Constantes::getArraySimNao());
-        $fullscreen->addItems(Constantes::getArraySimNao());
         $show_clock->addItems(Constantes::getArraySimNao());
         $show_title_bar->addItems(Constantes::getArraySimNao());
 
         $show_info->setLayout('horizontal');
-        $fullscreen->setLayout('horizontal');
         $show_clock->setLayout('horizontal');
         $show_title_bar->setLayout('horizontal');
 
         $show_info->setUseButton();
-        $fullscreen->setUseButton();
         $show_clock->setUseButton();
         $show_title_bar->setUseButton();
 
         $show_info->setValue('N');
-        $fullscreen->setValue('N');
         $show_clock->setValue(Constantes::YES);
         $interval->setValue('5000');
         $show_title_bar->setValue(Constantes::YES);
@@ -78,7 +72,6 @@ class ConfigForm extends TPage
         //$show_info->setSize('100%');
         $color_name->setSize('100%');
         //$show_clock->setSize('100%');
-        //$fullscreen->setSize('100%');
         //$show_title_bar->setSize('100%');
         $title_bar_color->setSize('100%');
 
@@ -93,7 +86,7 @@ class ConfigForm extends TPage
 
         $row4 = $this->form->addFields([new TLabel("Logo file:", null, '14px', null)],[$logo_file],[new TLabel("Show clock:", '#FF0000', '14px', null, '100%')],[$show_clock]);
         $row5 = $this->form->addContent([new TFormSeparator("Geral", '#333', '18', '#eee')]);
-        $row6 = $this->form->addFields([new TLabel("Full Screen:", '#ff0000', '14px', null, '100%'),$fullscreen],[new TLabel("Show info:", '#FF0000', '14px', null, '100%'),$show_info],[new TLabel("Data interval (in milliseconds):", '#ff0000', '14px', null, '100%'),$interval]);
+        $row6 = $this->form->addFields([new TLabel("Show info:", '#FF0000', '14px', null, '100%'),$show_info],[new TLabel("Data interval (in milliseconds):", '#ff0000', '14px', null, '100%'),$interval]);
         $row6->layout = ['col-sm-3',' col-sm-3',' col-sm-6'];
 
 
