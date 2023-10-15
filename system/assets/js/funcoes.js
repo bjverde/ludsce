@@ -33,21 +33,7 @@ function clock(showTitleBar,showClock)
         }, 1000);
     }
 }
-function fullScreen(showFullScreen)
-{
-    if(showFullScreen=='Y'){
-        var elem = document.getElementById("dising");
-        if (elem.requestFullscreen) {
-            elem.requestFullscreen();
-        } else if (elem.webkitRequestFullscreen) { /* Safari */
-            elem.webkitRequestFullscreen();
-        } else if (elem.msRequestFullscreen) { /* IE11 */
-            elem.msRequestFullscreen();
-        }
-    }
-}
-function info(showTitleBar,showClock,showFullScreen) 
+function info(showTitleBar,showClock) 
 {
     clock(showTitleBar,showClock);
-    //fullScreen(showFullScreen);
 }
