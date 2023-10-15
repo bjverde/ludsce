@@ -24,6 +24,5 @@ CREATE TABLE config(
       ,show_clock char(1) NOT NULL DEFAULT 'S'
       ,interval   int     NOT NULL DEFAULT 5000
       ,show_info  char(1) NOT NULL DEFAULT 'N'
-      ,fullscreen char(1) NOT NULL DEFAULT 'N'
       ,PRIMARY KEY (id)
       );
