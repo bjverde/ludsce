@@ -77,7 +77,6 @@ class banco
                       ,show_clock
                       ,interval
                       ,show_info
-                      ,fullscreen
                 from config
                 where id = 1";
         $sth = $conn->prepare($sql);

@@ -90,7 +90,7 @@ class funcoes
 
     public static function showBodyOnLoadJsFuncition($config)
     {
-        echo 'onload="info(\''.$config->show_title_bar.'\',\''.$config->show_clock.'\',\''.$config->fullscreen.'\')"';
+        echo 'onload="info(\''.$config->show_title_bar.'\',\''.$config->show_clock.'\')"';
     }
 
     public static function showTitleBarLogo($config)
