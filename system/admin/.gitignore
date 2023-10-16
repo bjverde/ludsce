@@ -38,7 +38,7 @@ _*
 **/app/control/NotificationList.class.php
 **/app/control/SearchBox.class.php
 **/app/control/SearchInputBox.class.php
-**/app/control/WelcomeView.class.php
+!/app/control/WelcomeView.class.php
 
 **/app/database/communication.db
 **/app/database/communication.sql
@@ -75,7 +75,12 @@ _*
 
 **/app/output
 **/app/reports
-**/app/resources
+
+/app/resources/*
+#!/app/resources/system_welcome_en.html
+#!/app/resources/system_welcome_es.html
+!/app/resources/system_welcome_pt.html
+
 **/app/service/
 **/app/templates/theme3/
 **/app/templates/theme4/
