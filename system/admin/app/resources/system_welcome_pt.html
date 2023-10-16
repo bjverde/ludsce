@@ -8,14 +8,14 @@
                 </div>
             </div>
             <div class="card-body panel-body">
-                <div style="margin: auto;text-align: center;">
-                    <a href="https://github.com/bjverde/sysgenad" target="newwindow">
-                        <img src="app/images/2-code-gen-database-first.png" width="80%">
-                    </a>
-                </div>
-                <div>
-                    <p>SysGen é um gerador de sistemas. Le um banco de dados, usando os metadados gera um sistema para o FrameWork Adinti 7.2.2 usando FormDin5</p>
-                </div>
+                <br> Sigua as 4 dicas abaixo e será mais feliz ! Essas orientações não são obrigatorias, seguindo o código gerado irá funcionar de forma mais facil. 
+                <a href="https://github.com/bjverde/formDin/wiki/Usando-DAO-e-VO#dicas-para-modelar-o-banco-de-dados" target="_blank">Veja na Wiki do formDin em detalhes cada dica.</a>
+                <ul>
+                    <li>NÃO use chaves primárias composta !! Evite chaves primarias compostas. Procure utilizar sempre a chaves primaria simples com AUTOINCREMENT. Transforme as chaves compostas em chaves candidatas com Unique Key.</li>
+                    <li>Procure criar chaves primárias (PK) com nomes únicos. Nada de toda PK com o nome ID</li>
+                    <li>Use VIEWS e/ou SubSelects</li>
+                    <li>Use tabelas de apoio, para os "tipos"</li>
+                </ul>
             </div>
             <div class="card-footer panel-footer" style="text-align:center">
                 <a href="index.php?class=helpView" class="btn btn-default"> <i class="fa fa-book blue" aria-hidden="true"></i>Ajuda</a>
@@ -31,18 +31,8 @@
                 </div>
             </div>
             <div class="card-body panel-body">
-                <br> Sigua as 4 dicas abaixo e será mais feliz ! Essas orientações não são obrigatorias, seguindo o código gerado irá funcionar de forma mais facil. 
-                <a href="https://github.com/bjverde/formDin/wiki/Usando-DAO-e-VO#dicas-para-modelar-o-banco-de-dados" target="_blank">Veja na Wiki do formDin em detalhes cada dica.</a>
-                <ul>
-                    <li>NÃO use chaves primárias composta !! Evite chaves primarias compostas. Procure utilizar sempre a chaves primaria simples com AUTOINCREMENT. Transforme as chaves compostas em chaves candidatas com Unique Key.</li>
-                    <li>Procure criar chaves primárias (PK) com nomes únicos. Nada de toda PK com o nome ID</li>
-                    <li>Use VIEWS e/ou SubSelects</li>
-                    <li>Use tabelas de apoio, para os "tipos"</li>
-                </ul>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/uJiLYIV-EUw?si=y5aPSc4d88wbUpnH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
-            <div class="card-footer panel-footer" style="text-align:center">
-                <a href="index.php?class=helpView" class="btn btn-default"> <i class="fa fa-book blue" aria-hidden="true"></i>Ajuda</a>
-            </div>            
         </div>
     </div> <!-- FIM CARD -->
 </div>
