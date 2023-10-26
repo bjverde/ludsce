@@ -40,7 +40,7 @@ Veja mais informações sobre:
 
 # Montando aplicação na web
 
-1. Clona o projeto localmente ou servidor. Pode ser baixar o zip. Se não sabe fazer, sigua o tutorial [Baixando o formDin](https://github.com/bjverde/formDin/wiki/Baixando-o-formDin)
+1. Clona o projeto LUDSCE localmente ou servidor. Pode ser baixar o zip. Se não sabe clonar ou baixar o arquivo zip, use o tutorial do [Baixando o formDin4](https://github.com/bjverde/formDin/wiki/Baixando-o-formDin) como exemplo e aplique no projeto do LUDSCE.
 1. Baixar o [Adianti Temaplate 7.5.1](https://www.adianti.com.br/framework-download) original e copiar o conteúdo do template na pasta `ludsce\system\admin`. *As pastas podem ser mescaladas. Porém NÃO PODE SUBSTITUIR qualquer arquivo*.
 1. [Instalar o FormDin5 sobre o Adianti Template 7.5.1 ou superior, conforme orientação](https://github.com/bjverde/formDin5#instala%C3%A7%C3%A3o)
 1. Vericar com o git, se algum arquivo foi alterado. *Descarta qualquer alteração ou arquivos novos*
