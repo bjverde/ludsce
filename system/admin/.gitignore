@@ -79,7 +79,15 @@ _*
 
 **/app/service/
 **/app/templates/theme3/
-**/app/templates/theme3_v5/
+/app/templates/theme3_v5/css/
+/app/templates/theme3_v5/img/
+/app/templates/theme3_v5/js/
+/app/templates/theme3_v5/application.css
+/app/templates/theme3_v5/iframe.html
+/app/templates/theme3_v5/libraries.html
+/app/templates/theme3_v5/login.html
+/app/templates/theme3_v5/public.html
+
 **/app/templates/theme4/
 **/app/templates/theme4_v5/
 
