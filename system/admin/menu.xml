@@ -32,9 +32,17 @@
                   <icon>fas:university fa-fw</icon>
                   <action>SystemUnitList</action>
               </menuitem>
+              <menuitem label='_t{Roles}'>
+                  <icon>fas:user-tag fa-fw</icon>
+                  <action>SystemRoleList</action>
+              </menuitem>
               <menuitem label='_t{Users}'>
                   <icon>fas:user fa-fw</icon>
                   <action>SystemUserList</action>
+              </menuitem>
+              <menuitem label='_t{Contacts}'>
+                  <icon>far:address-card fa-fw</icon>
+                  <action>SystemContactsList</action>
               </menuitem>
               <menuitem label='_t{Database explorer}'>
                   <icon>fas:database fa-fw</icon>
@@ -65,21 +73,14 @@
                   <action>SystemPreferenceForm#method=onEdit</action>
               </menuitem>
         </menu>
-    </menuitem>    
+    </menuitem>
+    
     <menuitem label='_t{Documents}'>
         <icon>far:file-alt fa-fw</icon>
         <menu>
-              <menuitem label='_t{Send document}'>
-                  <icon>fas:cloud-upload-alt fa-fw</icon>
-                  <action>SystemDocumentUploadForm</action>
-              </menuitem>
-              <menuitem label='_t{My documents}'>
-                  <icon>fas:archive fa-fw</icon>
-                  <action>SystemDocumentList</action>
-              </menuitem>
-              <menuitem label='_t{Shared with me}'>
-                  <icon>fas:share-alt fa-fw</icon>
-                  <action>SystemSharedDocumentList</action>
+              <menuitem label='_t{Documents}'>
+                  <icon>fas:box fa-fw</icon>
+                  <action>SystemDriveList</action>
               </menuitem>
               <menuitem label='_t{Categories}'>
                   <icon>fas:th fa-fw</icon>
@@ -88,6 +89,34 @@
         </menu>
     </menuitem>
     
+    <menuitem label='_t{Posts}'>
+        <icon>far:newspaper fa-fw</icon>
+        <menu>
+              <menuitem label='_t{News management}'>
+                    <icon>fas:pen-square fa-fw</icon>
+                    <action>SystemPostList</action>
+              </menuitem>
+              <menuitem label='_t{List news}'>
+                    <icon>fas:newspaper fa-fw</icon>
+                    <action>SystemPostFeedView</action>
+              </menuitem>
+        </menu>
+    </menuitem>
+
+    <menuitem label='Wiki'>
+        <icon>fas:globe fa-fw</icon>
+        <menu>
+              <menuitem label='_t{Page management}'>
+                    <icon>fab:wikipedia-w fa-fw</icon>
+                    <action>SystemWikiList</action>
+              </menuitem>
+              <menuitem label='_t{Search pages}'>
+                    <icon>fa:search fa-fw</icon>
+                    <action>SystemWikiSearchList</action>
+              </menuitem>
+        </menu>
+    </menuitem>
+
     <menuitem label='Logs'>
         <icon>fas:desktop fa-fw</icon>
         <menu>
