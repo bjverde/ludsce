@@ -31,6 +31,18 @@ define('OS', strtoupper(substr(PHP_OS, 0, 3)));
 define('PATH', dirname(__FILE__));
 define('LANG', $ini['general']['language']);
 
+//--- FORMDIN 5 START ---------------------------------------------------------
+FormDinHelper::verifyFormDinMinimumVersion($ini['system']['formdin_min_version']);
+FormDinHelper::verifyMinimumVersionAdiantiFrameWorkToSystem($ini['system']['adianti_min_version']);
+
+if(!defined('SYSTEM_VERSION') )  { define('SYSTEM_VERSION', $ini['system']['system_version']); }
+if(!defined('SYSTEM_NAME') )     { define('SYSTEM_NAME', $ini['general']['application']); }
+if(!defined('DS') )  { define('DS', DIRECTORY_SEPARATOR); }
+if(!defined('EOL') ) { define('EOL', "\n"); }
+if(!defined('ESP') ) { define('ESP', chr(32).chr(32).chr(32).chr(32) ); }
+if(!defined('TAB') ) { define('TAB', chr(9)); }
+//--- FORMDIN 5 END -----------------------------------------------------------
+
 // custom session name
 session_name('PHPSESSID_'.$ini['general']['application']);
 
