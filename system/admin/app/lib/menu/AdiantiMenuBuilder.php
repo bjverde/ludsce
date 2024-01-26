@@ -1,10 +1,25 @@
 <?php
+/**
+ * Application menu builder
+ *
+ * @version    7.6
+ * @package    app
+ * @subpackage lib
+ * @author     Pablo Dall'Oglio
+ * @copyright  Copyright (c) 2006 Adianti Solutions Ltd. (http://www.adianti.com.br)
+ * @license    https://adiantiframework.com.br/license-template
+ */
 class AdiantiMenuBuilder
 {
     public static function parse($file, $theme)
     {
         $ini = parse_ini_file('app/config/application.ini', true);
-
+        
+        if (!in_array('SimpleXML', get_loaded_extensions()))
+        {
+            throw new Exception(_t('Extension not found: ^1', 'SimpleXML'));
+        }
+        
         switch ($theme)
         {
             case 'theme3-adminlte3':
