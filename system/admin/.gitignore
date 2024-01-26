@@ -84,6 +84,7 @@ _*
 **/app/service/
 **/app/templates/theme3/
 **/app/templates/theme4/
+**/app/templates/theme4_v5/
 
 **/files
 /lib/**
