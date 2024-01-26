@@ -61,11 +61,7 @@ _*
 **/app/lib/menu/ApplicationMenuEditorRenderer.php
 **/app/lib/pdf
 **/app/lib/reports
-/app/lib/util/AdiantiRouteTranslator.php
-/app/lib/util/AdiantiUIBuilder.php
-/app/lib/util/MailService.class.php
-/app/lib/util/TApplicationFileSessionHandler.class.php
-/app/lib/util/TMail.class.php
+**/app/lib/util/
 **/app/lib/validator
 **/app/lib/widget
 
