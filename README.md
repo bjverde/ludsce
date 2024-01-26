@@ -26,12 +26,7 @@ See more information about:
 
 # Requirements
 * PHP 7.4 ou superior
-* HTML 5
-* CSS 3
-* JavaScript
-* BootStrap 3.4
-* Jquery 3.6
-* Adianti Template 7.4.X
+* Adianti Template 7.6.X
 
 # What's in each folder
 * database - SQL script to create the database see `maindatabase.sql` file. Extra permissions script see `permission-inserts-complemento.sql` file
