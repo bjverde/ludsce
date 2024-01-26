@@ -36,7 +36,8 @@ class WelcomeView extends TPage
         $panel3 = new TPanelGroup('Bienvenido!');
         $panel3->add($html3);
         
-        $vbox = TVBox::pack($panel1, $panel2, $panel3);
+        //$vbox = TVBox::pack($panel1, $panel2, $panel3);
+        $vbox = TVBox::pack($panel2);
         $vbox->style = 'display:block; width: 100%';
         
         // add the template to the page
