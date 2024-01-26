@@ -2,11 +2,11 @@
 /**
  * WelcomeView
  *
- * @version    1.0
+ * @version    7.6
  * @package    control
  * @author     Pablo Dall'Oglio
  * @copyright  Copyright (c) 2006 Adianti Solutions Ltd. (http://www.adianti.com.br)
- * @license    http://www.adianti.com.br/framework-license
+ * @license    https://adiantiframework.com.br/license-template
  */
 class WelcomeView extends TPage
 {
@@ -18,9 +18,8 @@ class WelcomeView extends TPage
     {
         parent::__construct();
         
-        //$html1 = new THtmlRenderer('app/resources/luds-aviso.html');
-        $html1 = new THtmlRenderer('app/resources/system_welcome_pt.html');
-        $html2 = new THtmlRenderer('app/resources/system_welcome_en.html');
+        $html1 = new THtmlRenderer('app/resources/system_welcome_en.html');
+        $html2 = new THtmlRenderer('app/resources/system_welcome_pt.html');
         $html3 = new THtmlRenderer('app/resources/system_welcome_es.html');
 
         // replace the main section variables
@@ -28,10 +27,10 @@ class WelcomeView extends TPage
         $html2->enableSection('main', array());
         $html3->enableSection('main', array());
         
-        $panel1 = new TPanelGroup('Bem-vindo!');
+        $panel1 = new TPanelGroup('Welcome!');
         $panel1->add($html1);
         
-        $panel2 = new TPanelGroup('Welcome!');
+        $panel2 = new TPanelGroup('Bem-vindo!');
         $panel2->add($html2);
 		
         $panel3 = new TPanelGroup('Bienvenido!');
