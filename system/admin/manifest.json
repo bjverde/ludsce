@@ -1,14 +1,31 @@
 {
-  "short_name": "Adianti Template",
-  "name": "Adianti Template",
-  "icons": [
+   "short_name": "LUDS"
+  ,"name": "LUDS"
+  ,"display": "standalone"
+  ,"theme_color": "#000000"  
+  ,"background_color": "#FFFFFF"
+  ,"description": "LUDS a simple Digital Signage"
+  ,"start_url": "index.php"
+  ,"icons": [
     {
-      "src": "app/images/icon.png",
+      "src": "app/images/icone_128x128px.png",
       "type": "image/png",
-      "sizes": "180x180"
+      "sizes": "128x128"
     }
-  ],
-  "background_color": "#fff",
-  "display": "standalone",
-  "theme_color": "#FFFFFF"
+    ,{
+      "src": "app/images/icone_196x196px.png",
+      "type": "image/png",
+      "sizes": "196x196"
+    }    
+    ,{
+      "src": "app/images/icone_256x256px.png",
+      "type": "image/png",
+      "sizes": "256x256"
+    }    
+    ,{
+      "src": "app/images/icone_512x512px.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
 }
