@@ -36,7 +36,7 @@ See more information about:
 # Assembling web application
 
 1. Clone the project locally or on the server.
-1. Download [Adianti Template 7.5.1 fork or higher](https://github.com/bjverde/adianti-fork-template) and copy the template content in the `ludsce\system\admin` folder. *Folders can be merged. But DO NOT REPLACE any *. Note you can use the original [Adianti Temaplate 7.5.1](https://www.adianti.com.br/framework-download)
+1. Download [Adianti Fork Temaplate 7.6.0.1](https://github.com/bjverde/adianti-fork-template/releases/tag/v7.6.0.1) and copy the template content in the `ludsce\system\admin` folder. *Folders can be merged. But DO NOT REPLACE any *. Note you can use the original [Adianti Fork Temaplate 7.6.0.1](https://github.com/bjverde/adianti-fork-template/releases/tag/v7.6.0.1)
 1. [Install FormDin5 over Adianti Template 7.4.0 or higher, as directed](https://github.com/bjverde/formDin5#instala%C3%A7%C3%A3o)
 1. Check with git if any files have changed. *Discards any changes or new files*
 1. Have a PHP 8.0.x server or higher, installed and configured with PDO SqLite.
