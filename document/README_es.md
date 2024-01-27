@@ -25,13 +25,8 @@ Ver más información sobre:
 ![visão geral](exemplo01.jpg)
 
 # Requisitos
-* PHP 7.4 o superior
-* HTML 5
-* CSS 3
-* JavaScript
-* BootStrap 3.4
-* Jquery 3.6
-* Adianti Template 7.4.X
+* PHP 8.0.X o superior
+* [Adianti Fork Template 7.6.0.X o superior](https://github.com/bjverde/adianti-fork-template/)
 
 # Que hay en cada carpeta
 * Documento: solo tiene imágenes y texto auxiliar
@@ -54,6 +49,7 @@ Ver más información sobre:
 usuario | contraseña | perfil
 ------ | ------------------ | --------------------
 administrador | administrador | es superusuario puede hacer todo en el sistema.
+user | user | es superusuario comum que pode apenas postar conteudo.
 
 # Concorrentes 
 
