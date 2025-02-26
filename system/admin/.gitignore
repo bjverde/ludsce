@@ -88,6 +88,8 @@ _*
 /app/templates/theme3_v5/login.html
 /app/templates/theme3_v5/public.html
 
+**/app/templates/adminbs5/
+**/app/templates/adminbs5_t/
 **/app/templates/theme4/
 **/app/templates/theme4_v5/
 
