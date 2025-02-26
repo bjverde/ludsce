@@ -1,152 +1,190 @@
 <?php
-/**
- * Application menu builder
- *
- * @version    7.6
- * @package    app
- * @subpackage lib
- * @author     Pablo Dall'Oglio
- * @copyright  Copyright (c) 2006 Adianti Solutions Ltd. (http://www.adianti.com.br)
- * @license    https://adiantiframework.com.br/license-template
- */
 class AdiantiMenuBuilder
 {
+    /**
+     * Parse main menu and converts into HTML
+     */
     public static function parse($file, $theme)
     {
-        $ini = parse_ini_file('app/config/application.ini', true);
-        
-        if (!in_array('SimpleXML', get_loaded_extensions()))
+        if (!extension_loaded('SimpleXML'))
         {
             throw new Exception(_t('Extension not found: ^1', 'SimpleXML'));
         }
         
+        if (!file_exists($file))
+        {
+            throw new Exception(_t('File not found').': ' . $file);
+        }
+        
         switch ($theme)
         {
-            case 'theme3-adminlte3':
-                ob_start();
-                $callback = array('SystemPermission', 'checkPermission');
-                $xml = new SimpleXMLElement(file_get_contents($file));
-                $menu = new TMenu(
-                    $xml,
-                    $callback,
-                    1,
-                    'nav nav-treeview has-treeview',
-                    'nav-item',
-                    'nav-link'
-                    , function($item) use ($ini) {
-                        $item->class = 'nav-item';
-                        $item->setClassIcon('nav-icon');
-                        $item->setClassLink('nav-link');
-                        $item->setTagLabel('p');
-
-                        if (empty($ini['general']['use_tabs']) && empty($ini['general']['use_mdi_windows'])) {
-                            return $item;
-                        }
-
-                        $action = $item->getAction();
-
-                        if (empty($action)) {
-                            return $item;
-                        }
-
-                        $label   = $item->getLabel();
-                        $action .= "#adianti_open_tab=1#adianti_tab_name={$label}";
-
-                        $item->setAction($action);
-
-                        return $item;
-                    }
-                    , function($menu) {
-                        $position = count($menu->getChildren()) - 1;
-                        $menu->get($position)->add(TElement::tag('i','',['class' => "right fas fa-angle-left"]));
-                        return $menu;
-                    }
-                );
-
-                $menu->{'id'}             = 'side-menu';
-                $menu->{'role'}           = 'menu';
-                $menu->{'class'}          = 'nav nav-pills nav-sidebar flex-column';
-                $menu->{'data-widget'}    = 'treeview';
-                $menu->{'data-accordion'} = 'false';
-                $menu->show();
-
-                $menu_string = ob_get_clean();
-                return $menu_string;
-                break;
-            case 'theme3':
-            case 'theme3_v4':
-            case 'theme3_v5':
-                ob_start();
-                $callback = array('SystemPermission', 'checkPermission');
-                $xml = new SimpleXMLElement(file_get_contents($file));
-
-                $callbackItem = null;
-
-                if (! empty($ini['general']['use_tabs']) || ! empty($ini['general']['use_mdi_windows'])) {
-                    $callbackItem = function($item) {
-                        $action = $item->getAction();
-
-                        if (empty($action)) {
-                            return $item;
-                        }
-
-                        $label   = $item->getLabel();
-                        $action .= "#adianti_open_tab=1#adianti_tab_name={$label}";
-
-                        $item->setAction($action);
-
-                        return $item;
-                    };
-                }
-
-                $menu = new TMenu($xml, $callback, 1, 'treeview-menu', 'treeview', '', $callbackItem);
-                $menu->class = 'sidebar-menu';
+            case 'adminbs5':
+            case 'adminbs5_t':
+            case 'adminbs5_v2':
+                $xml  = new SimpleXMLElement(file_get_contents($file));
+                $menu = new TMenu($xml, null, 1, 'sidebar-dropdown list-unstyled collapse', 'sidebar-item', 'sidebar-link collapsed');
+                $menu->class = 'sidebar-nav';
                 $menu->id    = 'side-menu';
-                $menu->show();
-                $menu_string = ob_get_clean();
-                return $menu_string;
-                break;
-            default:
+
                 ob_start();
-                $callback = array('SystemPermission', 'checkPermission');
-                $xml = new SimpleXMLElement(file_get_contents($file));
-
-                $callbackItem = null;
-
-                if (! empty($ini['general']['use_tabs']) || ! empty($ini['general']['use_mdi_windows'])) {
-                    $callbackItem = function($item) {
-                        $action = $item->getAction();
-
-                        if (empty($action)) {
-                            return $item;
-                        }
-
-                        $label   = $item->getLabel();
-                        $action .= "#adianti_open_tab=1#adianti_tab_name={$label}";
-
-                        $item->setAction($action);
-
-                        return $item;
-                    };
-                }
-
-                $menu = new TMenu($xml, $callback, 1, 'ml-menu', 'x', 'menu-toggle waves-effect waves-block', $callbackItem);
-                
-                $li = new TElement('li');
-                $li->{'class'} = 'active';
-                $menu->add($li);
-                
-                $li = new TElement('li');
-                $li->add('MENU');
-                $li->{'class'} = 'header';
-                $menu->add($li);
-                
-                $menu->class = 'list';
-                $menu->style = 'overflow: hidden; width: auto;';
                 $menu->show();
-                $menu_string = ob_get_clean();
-                return $menu_string;
+                return ob_get_clean();
                 break;
         }
+    }
+    
+    /**
+     *
+     */
+    public static function parseNavBar($file, $theme)
+    {
+        if (!extension_loaded('SimpleXML'))
+        {
+            throw new Exception(_t('Extension not found: ^1', 'SimpleXML'));
+        }
+        
+        if (file_exists($file))
+        {
+            $xml = new SimpleXMLElement(file_get_contents($file));
+            
+            $output = '';
+            foreach ($xml as $xmlElement)
+            {
+                $label  = null;
+                $icon   = !empty( (string) $xmlElement-> icon ) ? (string) $xmlElement-> icon : null;
+                $action_string = str_replace('#', '&', (string) $xmlElement-> action);
+                
+                if ((string) $xmlElement-> label)
+                {
+                    $label = (string) $xmlElement-> label;
+                }
+                if ((string) $xmlElement->attributes()-> label)
+                {
+                    $label = (string) $xmlElement->attributes()-> label;
+                }
+                
+                if ($xmlElement->menu)
+                {
+                    $i = ($icon) ? new TImage($icon) : null;
+                    $dropdown = new TDropDown($label, $i);
+                    $dropdown->setButtonClass('dropdown-toggle btn superlight');
+                    $dropdown->getButton()->style .= ';font-size:1rem;';
+                    
+                    if (!empty((string) $xmlElement-> mobile) && (string) $xmlElement-> mobile == 'N')
+                    {
+                        $dropdown->setButtonClass('dropdown-toggle btn superlight hide-mobile');
+                    }
+                    
+                    foreach ($xmlElement->menu->menuitem as $menuItem)
+                    {
+                        $item_label  = (string) $menuItem->attributes()-> label;
+                        $item_action = str_replace('#', '&', (string) $menuItem-> action);
+                        $item_icon   = (string) $menuItem-> icon;
+                        
+                        if (self::checkMenuActionPermission($item_action))
+                        {
+                            if ($router = AdiantiCoreApplication::getRouter())
+                            {
+                                $action = '__adianti_load_page("'.$router("class={$item_action}", true) .'")';
+                            }
+                            else
+                            {
+                                $action = "__adianti_load_page('index.php?class={$item_action}')";
+                            }
+                            
+                            $li = $dropdown->addAction($item_label, $action, $item_icon . ' gray');
+                            
+                            if (!empty((string) $menuItem-> mobile) && (string) $menuItem-> mobile == 'N')
+                            {
+                                $li->class .= " hide-mobile";
+                            }
+                        }
+                    }
+                    
+                    if (count($dropdown->getItems()) >0)
+                    {
+                        $output .= $dropdown;
+                    }
+                }
+                else
+                {
+                    $link = new TElement('a');
+                    $link->generator = "adianti";
+                    $link->class     = "btn superlight ";
+                    $link->style     = "padding: 5px;";
+                    
+                    if (strpos($file, 'top') !== false)
+                    {
+                        $link->style .= ";font-size:1rem;";
+                    }
+                    
+                    if (!empty((string) $xmlElement-> mobile) && (string) $xmlElement-> mobile == 'N')
+                    {
+                        $link->class .= " hide-mobile";
+                    }
+                    
+                    if (!empty((string) $xmlElement-> title))
+                    {
+                        $link->title = (string) $xmlElement-> title;
+                    }
+                    
+                    if ((substr($action_string,0,7) == 'http://') or (substr($action_string,0,8) == 'https://'))
+                    {
+                        $link->{'href'} = $action_string;
+                        $link->{'target'} = '_blank';
+                        $link->{'generator'} = '';
+                    }
+                    else
+                    {
+                        if ($router = AdiantiCoreApplication::getRouter())
+                        {
+                            $link->{'href'} = $router("class={$action_string}", true);
+                        }
+                        else
+                        {
+                            $link->{'href'} = "index.php?class={$action_string}";
+                        }
+                    }
+                    
+                    if ($icon)
+                    {
+                        $i = new TImage($icon);
+                        $i->style = "color:gray;font-size:1.2rem;float: left;margin-top: 3px;";
+                        $link->add($i);
+                    }
+                    
+                    if ($label)
+                    {
+                        $link->add('&nbsp;'. $label);
+                    }
+                    
+                    if ( (strpos($file, 'public') !== false) || (self::checkMenuActionPermission($action_string)) || 
+                         (substr($action_string,0,7) == 'http://') || (substr($action_string,0,8) == 'https://') )
+                    {
+                        $output .= $link;
+                    }
+                }
+            }
+            
+            return $output;
+        }
+        
+        return '';
+    }
+    
+    /**
+     * Check menu item permission
+     */
+    private static function checkMenuActionPermission($action_string)
+    {
+        $permission_callback = self::CHECK_PERMISSION;
+        
+        parse_str('class='.$action_string, $parts);
+        $className = $parts['class'];
+        if (call_user_func($permission_callback, $className))
+        {
+            return true;
+        }
+        return false;
     }
 }
