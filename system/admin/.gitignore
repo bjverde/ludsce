@@ -120,6 +120,9 @@ _*
 LICENSE
 **/menu-dist.xml
 **/menu-public.xml
+**/menu-top.xml
+**/menu-bottom.xml
+**/menu-basic.xml
 **/rest-secure.php.dist
 **/rest.php.dist
 **/soap.php.dist
