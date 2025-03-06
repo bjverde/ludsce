@@ -59,7 +59,7 @@ return [
         'background' => 'app/images/thumb-1920-698137.jpg'
     ],
     'system' => [
-         'system_version' => '2.0.0'
+         'system_version' => '1.0.0'
         ,'formdin_min_version'=>'5.1.1'
         ,'adianti_min_version'=>'8.0.0'
     ],
