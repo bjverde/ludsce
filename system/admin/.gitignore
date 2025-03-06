@@ -82,8 +82,8 @@ _*
 **/app/reports
 
 /app/resources/*
-#!/app/resources/system_welcome_en.html
-#!/app/resources/system_welcome_es.html
+!/app/resources/system_welcome_en.html
+!/app/resources/system_welcome_es.html
 !/app/resources/system_welcome_pt.html
 
 **/app/service/
