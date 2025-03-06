@@ -18,26 +18,35 @@ _*
 
 #Projeto FormDin5 com Adianti
 /app/config/communication.ini
+/app/config/communication.php
 /app/config/framework_hashes.php
 /app/config/ldap.ini
 /app/config/log.ini
+/app/config/log.php
 /app/config/permission.ini
+/app/config/permission.php
 /app/config/sample.ini
 /app/config/sample.php
 /app/config/unit_a.ini
+/app/config/unit_a.php
 /app/config/unit_b.ini
+/app/config/unit_b.php
 /app/config/unit_database.php
 
 **/app/control/admin
 **/app/control/start
 **/app/control/communication
 **/app/control/log
+**/app/control/public/PublicView.php
 **/app/control/public/PublicView.class.php
+**/app/control/CommonPage.php
 **/app/control/CommonPage.class.php
 **/app/control/MessageList.class.php
 **/app/control/NotificationList.class.php
+**/app/control/SearchBox.php
 **/app/control/SearchBox.class.php
 **/app/control/SearchInputBox.class.php
+!/app/control/WelcomeView.php
 !/app/control/WelcomeView.class.php
 
 **/app/database/communication.db
