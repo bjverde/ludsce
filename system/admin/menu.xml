@@ -11,10 +11,10 @@
                   <action>ConfigForm</action>
               </menuitem>                    
       </menu>
-      
     </menuitem>
+    
     <menuitem label='_t{Administration}'>
-        <icon>fas:home fa-fw</icon>
+        <icon>fas:sliders fa-fw</icon>
         <menu>
               <menuitem label='Dashboard'>
                   <icon>fas:tachometer-alt fa-fw</icon>
@@ -40,33 +40,17 @@
                   <icon>fas:user fa-fw</icon>
                   <action>SystemUserList</action>
               </menuitem>
-              <menuitem label='_t{Contacts}'>
-                  <icon>far:address-card fa-fw</icon>
-                  <action>SystemContactsList</action>
+              <menuitem label='_t{Page management}'>
+                    <icon>fab:wikipedia-w fa-fw</icon>
+                    <action>SystemWikiList</action>
               </menuitem>
-              <menuitem label='_t{Database explorer}'>
-                  <icon>fas:database fa-fw</icon>
-                  <action>SystemDatabaseExplorer</action>
+              <menuitem label='_t{News management}'>
+                    <icon>fas:pen-square fa-fw</icon>
+                    <action>SystemPostList</action>
               </menuitem>
-              <menuitem label='_t{SQL Panel}'>
-                  <icon>fas:table fa-fw</icon>
-                  <action>SystemSQLPanel</action>
-              </menuitem>
-              <menuitem label='_t{Menu editor}'>
-                  <icon>far:edit fa-fw</icon>
-                  <action>SystemMenuEditor</action>
-              </menuitem>
-              <menuitem label='_t{Files diff}'>
-                  <icon>fas:file-medical-alt fa-fw</icon>
-                  <action>SystemFilesDiff</action>
-              </menuitem>
-              <menuitem label='PHP Info'>
-                  <icon>fas:info-circle fa-fw</icon>
-                  <action>SystemPHPInfoView</action>
-              </menuitem>
-              <menuitem label='System Information'>
-                  <icon>fas:desktop fa-fw</icon>
-                  <action>SystemInformationView</action>
+              <menuitem label='_t{Schedules}'>
+                  <icon>fas:clock fa-fw</icon>
+                  <action>SystemScheduleList#method=onReload</action>
               </menuitem>
               <menuitem label='_t{Preferences}'>
                   <icon>fas:cog fa-fw</icon>
@@ -75,48 +59,6 @@
         </menu>
     </menuitem>
     
-    <menuitem label='_t{Documents}'>
-        <icon>far:file-alt fa-fw</icon>
-        <menu>
-              <menuitem label='_t{Documents}'>
-                  <icon>fas:box fa-fw</icon>
-                  <action>SystemDriveList</action>
-              </menuitem>
-              <menuitem label='_t{Categories}'>
-                  <icon>fas:th fa-fw</icon>
-                  <action>SystemDocumentCategoryFormList</action>
-              </menuitem>
-        </menu>
-    </menuitem>
-    
-    <menuitem label='_t{Posts}'>
-        <icon>far:newspaper fa-fw</icon>
-        <menu>
-              <menuitem label='_t{News management}'>
-                    <icon>fas:pen-square fa-fw</icon>
-                    <action>SystemPostList</action>
-              </menuitem>
-              <menuitem label='_t{List news}'>
-                    <icon>fas:newspaper fa-fw</icon>
-                    <action>SystemPostFeedView</action>
-              </menuitem>
-        </menu>
-    </menuitem>
-
-    <menuitem label='Wiki'>
-        <icon>fas:globe fa-fw</icon>
-        <menu>
-              <menuitem label='_t{Page management}'>
-                    <icon>fab:wikipedia-w fa-fw</icon>
-                    <action>SystemWikiList</action>
-              </menuitem>
-              <menuitem label='_t{Search pages}'>
-                    <icon>fa:search fa-fw</icon>
-                    <action>SystemWikiSearchList</action>
-              </menuitem>
-        </menu>
-    </menuitem>
-
     <menuitem label='Logs'>
         <icon>fas:desktop fa-fw</icon>
         <menu>
@@ -140,17 +82,21 @@
                   <icon>fas:globe fa-fw</icon>
                   <action>SystemRequestLogList</action>
               </menuitem>
+              <menuitem label='_t{Schedules}'>
+                  <icon>fas:clock fa-fw</icon>
+                  <action>SystemScheduleLogList</action>
+              </menuitem>
               <menuitem label='_t{PHP Log}'>
                   <icon>fas:exclamation-triangle fa-fw</icon>
                   <action>SystemPHPErrorLogView</action>
               </menuitem>
-              <menuitem label='Session dump'>
+              <menuitem label='Session vars'>
                   <icon>fas:code fa-fw</icon>
-                  <action>SystemSessionDumpView</action>
+                  <action>SystemSessionVarsView</action>
               </menuitem>
         </menu>
     </menuitem>
-            
+    
     <menuitem label='Logout'>
         <action>LoginForm#method=onLogout#static=1</action>
         <icon>fas:sign-out-alt fa-fw</icon>
