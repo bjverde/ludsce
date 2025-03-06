@@ -80,12 +80,12 @@ class ConfigForm extends TPage
         $row1 = $this->form->addFields([$id],[]);
         $row1->layout = ['col-sm-6','col-sm-6'];
 
-        $row2 = $this->form->addContent([new TFormSeparator("Title Bar", '#333', '18', '#eee')]);
+        $row2 = $this->form->addContent([new TFormSeparator("Title Bar", null, '18', '#eee')]);
         $row3 = $this->form->addFields([new TLabel("Show title bar:", '#ff0000', '14px', null, '100%'),$show_title_bar],[new TLabel("Title bar color:", '#ff0000', '14px', null, '100%'),$title_bar_color],[new TLabel("Name:", null, '14px', null, '100%'),$name],[new TLabel("Color name:", '#ff0000', '14px', null, '100%'),$color_name]);
         $row3->layout = [' col-sm-3',' col-sm-3',' col-sm-3',' col-sm-3'];
 
         $row4 = $this->form->addFields([new TLabel("Logo file:", null, '14px', null)],[$logo_file],[new TLabel("Show clock:", '#FF0000', '14px', null, '100%')],[$show_clock]);
-        $row5 = $this->form->addContent([new TFormSeparator("Geral", '#333', '18', '#eee')]);
+        $row5 = $this->form->addContent([new TFormSeparator("Geral", null, '18', '#eee')]);
         $row6 = $this->form->addFields([new TLabel("Show info:", '#FF0000', '14px', null, '100%'),$show_info],[new TLabel("Data interval (in milliseconds):", '#ff0000', '14px', null, '100%'),$interval]);
         $row6->layout = ['col-sm-3',' col-sm-3',' col-sm-6'];
 
