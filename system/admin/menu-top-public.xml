@@ -1,8 +1,9 @@
 <menu>
-    <menuitem label="Início">
-      <icon>fas:life-ring fa-fw</icon>
-      <action>WelcomeView</action>
-      <title>Início</title>
+    <menuitem>
+      <icon>fas:sign-in-alt fa-fw</icon>
+      <action>LoginForm</action>
+      <title>_t{Login}</title>
+      <label>_t{Login}</label>
       <mobile>Y</mobile>
     </menuitem>
 </menu>

@@ -1,8 +1,9 @@
 <menu>
-    <menuitem label="Aprenda">
-      <icon>fas:book fa-fw</icon>
-      <action>LearnView</action>
-      <title>Aprenda</title>
+    <menuitem>
+      <icon>fas:user-plus fa-fw</icon>
+      <action>SystemRegistrationForm</action>
+      <title>_t{Create account}</title>
+      <label>_t{Create account}</label>
       <mobile>Y</mobile>
     </menuitem>
 </menu>
