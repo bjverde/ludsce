@@ -46,6 +46,9 @@ if ( TSession::getValue('logged') ) {
     }
 }
 
+$title   = $ini['general']['title'].' - v'.$ini['system']['system_version'];
+$content = str_replace('{title}', $title, $content);
+
 $content = ApplicationTranslator::translateTemplate($content);
 $content = AdiantiTemplateParser::parse($content);
 
