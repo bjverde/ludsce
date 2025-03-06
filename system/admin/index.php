@@ -3,36 +3,69 @@ require_once 'init.php';
 
 $ini = AdiantiApplicationConfig::get();
 $theme  = $ini['general']['theme'];
+$class  = isset($_REQUEST['class']) ? $_REQUEST['class'] : '';
+$public = in_array($class, !empty($ini['permission']['public_classes']) ? $ini['permission']['public_classes'] : []);
+
+// AdiantiCoreApplication::setRouter(array('AdiantiRouteTranslator', 'translate'));
+
 new TSession;
+ApplicationAuthenticationService::checkMultiSession();
+ApplicationTranslator::setLanguage( TSession::getValue('user_language'), true );
 
-$content     = file_get_contents("app/templates/{$theme}/layout.html");
-$menu_string = AdiantiMenuBuilder::parse('menu.xml', $theme);
-$content     = ApplicationTranslator::translateTemplate($content);
-$content     = str_replace('{LIBRARIES}', file_get_contents("app/templates/{$theme}/libraries.html"), $content);
-$content     = str_replace('{class}', isset($_REQUEST['class']) ? $_REQUEST['class'] : '', $content);
-$content     = str_replace('{template}', $theme, $content);
-$content     = str_replace('{MENU}', $menu_string, $content);
-$content     = str_replace('{MENUTOP}', AdiantiMenuBuilder::parseNavBar('menu-top-public.xml', $theme), $content);
-$content     = str_replace('{MENUBOTTOM}', AdiantiMenuBuilder::parseNavBar('menu-bottom-public.xml', $theme), $content);
-$content     = str_replace('{lang}', $ini['general']['language'], $content);
-$content     = str_replace('{title}', $ini['general']['title'] ?? '', $content);
-$content     = str_replace('{template_options}',  json_encode($ini['template'] ?? []), $content);
-$content     = str_replace('{adianti_options}',  json_encode($ini['general']), $content);
+if ( TSession::getValue('logged') )
+{
+    if (isset($_REQUEST['template']) AND $_REQUEST['template'] == 'iframe')
+    {
+        $content = file_get_contents("app/templates/{$theme}/iframe.html");
+    }
+    else
+    {
+        $content = file_get_contents("app/templates/{$theme}/layout.html");
+        $content = str_replace('{MENU}', AdiantiMenuBuilder::parse('menu.xml', $theme), $content);
+        $content = str_replace('{MENUTOP}', AdiantiMenuBuilder::parseNavBar('menu-top.xml', $theme), $content);
+        $content = str_replace('{MENUBOTTOM}', AdiantiMenuBuilder::parseNavBar('menu-bottom.xml', $theme), $content);
+    }
+}
+else
+{
+    if (isset($ini['general']['public_view']) && $ini['general']['public_view'] == '1')
+    {
+        $content = file_get_contents("app/templates/{$theme}/public.html");
+        $menu    = AdiantiMenuBuilder::parse('menu-public.xml', $theme);
+        $content = str_replace('{MENU}', $menu, $content);
+        $content = str_replace('{MENUTOP}', AdiantiMenuBuilder::parseNavBar('menu-top-public.xml', $theme), $content);
+        $content = str_replace('{MENUBOTTOM}', AdiantiMenuBuilder::parseNavBar('menu-bottom-public.xml', $theme), $content);
+    }
+    else
+    {
+        $content = file_get_contents("app/templates/{$theme}/login.html");
+    }
+}
 
-//--------------- adminbs5_t -----------------------
-$content     = str_replace('{system_name_sub}', $ini['general']['system_name_sub'] ?? '', $content);
-$content     = str_replace('{login}','usuario.logado', $content); //Aqui informe seu metodo de login
-//--------------- FIM adminbs5_t ------------------
-
-
-$css         = TPage::getLoadedCSS();
-$js          = TPage::getLoadedJS();
-$content     = str_replace('{HEAD}', $css.$js, $content);
+$content = ApplicationTranslator::translateTemplate($content);
+$content = AdiantiTemplateParser::parse($content);
 
 echo $content;
 
-if (isset($_REQUEST['class']))
+if (TSession::getValue('logged') OR $public)
 {
-    $method = isset($_REQUEST['method']) ? $_REQUEST['method'] : NULL;
-    AdiantiCoreApplication::loadPage($_REQUEST['class'], $method, $_REQUEST);
+    if ($class)
+    {
+        $method = isset($_REQUEST['method']) ? $_REQUEST['method'] : NULL;
+        AdiantiCoreApplication::loadPage($class, $method, $_REQUEST);
+    }
+}
+else
+{
+    if (isset($ini['general']['public_view']) && $ini['general']['public_view'] == '1')
+    {
+        if (!empty($ini['general']['public_entry']))
+        {
+            AdiantiCoreApplication::loadPage($ini['general']['public_entry'], '', $_REQUEST);
+        }
+    }
+    else
+    {
+        AdiantiCoreApplication::loadPage('LoginForm', '', $_REQUEST);
+    }
 }
