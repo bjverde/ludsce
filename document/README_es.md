@@ -25,8 +25,8 @@ Ver más información sobre:
 ![visão geral](exemplo01.jpg)
 
 # Requisitos
-* PHP 8.0.X o superior
-* [Adianti Fork Template 7.6.0.X o superior](https://github.com/bjverde/adianti-fork-template/)
+* PHP 8.1.X o superior
+* [Adianti Fork Template 8.0.0.X o superior](https://github.com/bjverde/adianti-fork-template/)
 
 # Que hay en cada carpeta
 * Documento: solo tiene imágenes y texto auxiliar
@@ -35,10 +35,9 @@ Ver más información sobre:
 # Montaje de aplicación web
 
 1. Clone el proyecto localmente o en el servidor.
-1. Descargue [Fork Adianti Template 7.5.1 o superior](https://github.com/bjverde/adianti-fork-template) y copie el contenido de la plantilla en la carpeta `ludsce\system\admin`. * Las carpetas se pueden combinar. Pero NO REEMPLAZAR ningún *. Tenga en cuenta que puede usar el [Adianti Temaplate 7.5.1] original (https://www.adianti.com.br/framework-download)
-1. [Instalar FormDin5 sobre Adianti Template 7.4.0 o superior, como se indica](https://github.com/bjverde/formDin5#instala%C3%A7%C3%A3o)
+1. Descargue [Fork Adianti Fork Template 8.0.0.X o superior](https://github.com/bjverde/adianti-fork-template/releases/tag/v8.0.0.1) y copie el contenido de la plantilla en la carpeta `ludsce\system\admin`. *Las carpetas se pueden combinar. Pero NO REEMPLAZAR ningún*. 
 1. Verifique con git si algún archivo ha cambiado. *Descarta cualquier cambio o archivo nuevo*
-1. Tener un servidor PHP 8.0.x o superior, instalado y configurado con PDO SqLite.
+1. Tener un servidor PHP 8.1.x o superior, instalado y configurado con PDO SqLite.
 1. En el servidor PHP, cree la carpeta `ludsce`
 1. Copie el contenido de la carpeta `system` al `ludsce` creado en el elemento anterior.
 1. Eso es todo, solo accede al sistema

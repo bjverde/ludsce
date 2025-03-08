@@ -25,8 +25,8 @@ See more information about:
 ![visão geral](document/exemplo01.jpg)
 
 # Requirements
-* PHP 8.0.x or higher
-* [Adianti Fork Template 7.6.0.X ou superior](https://github.com/bjverde/adianti-fork-template/)
+* PHP 8.1.x or higher
+* [Adianti Fork Template 8.0.0.X ou superior](https://github.com/bjverde/adianti-fork-template/)
 
 # What's in each folder
 * database - SQL script to create the database see `maindatabase.sql` file. Extra permissions script see `permission-inserts-complemento.sql` file
@@ -36,8 +36,7 @@ See more information about:
 # Assembling web application
 
 1. Clone the project locally or on the server.
-1. Download [Adianti Fork Temaplate 7.6.0.1](https://github.com/bjverde/adianti-fork-template/releases/tag/v7.6.0.1) and copy the template content in the `ludsce\system\admin` folder. *Folders can be merged. But DO NOT REPLACE any*. Note you can use the original [Adianti Fork Temaplate 7.6.0.1](https://github.com/bjverde/adianti-fork-template/releases/tag/v7.6.0.1)
-1. [Install FormDin5 over Adianti Fork Template 7.6.01 or higher, as directed](https://github.com/bjverde/formDin5#instala%C3%A7%C3%A3o)
+1. Download [Adianti Fork Temaplate 8.0.0.1](https://github.com/bjverde/adianti-fork-template/releases/tag/v8.0.0.1) and copy the template content in the `ludsce\system\admin` folder. *Folders can be merged. But DO NOT REPLACE any*. Note you can use the original [Adianti Fork Temaplate 8.0.0.1](https://github.com/bjverde/adianti-fork-template/releases/tag/v8.0.0.1)
 1. Check with git if any files have changed. *Discards any changes or new files*
 1. Have a PHP 8.0.x server or higher, installed and configured with PDO SqLite.
 1. On the PHP server create the `ludsce` folder
