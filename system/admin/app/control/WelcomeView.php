@@ -2,7 +2,7 @@
 /**
  * WelcomeView
  *
- * @version    8.0
+ * @version    8.7
  * @package    control
  * @author     Pablo Dall'Oglio
  * @copyright  Copyright (c) 2006 Adianti Solutions Ltd. (http://www.adianti.com.br)
