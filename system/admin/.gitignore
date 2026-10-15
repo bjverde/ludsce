@@ -53,12 +53,13 @@
 /app/control/log/
 /app/control/public/PublicView.php
 /app/control/public/SystemConcurrentAccessView.php
+/app/control/public/SystemInvalidAccessView.php
 /app/control/CommonPage.php
 /app/control/MessageList.class.php
 /app/control/NotificationList.class.php
 /app/control/SearchBox.php
 /app/control/SearchInputBox.class.php
-!/app/control/WelcomeView.class.php
+!/app/control/WelcomeView.php
 
 /app/database/communication.db
 /app/database/communication.sql
