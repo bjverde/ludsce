@@ -87,21 +87,9 @@ _*
 !/app/resources/system_welcome_pt.html
 
 **/app/service/
-**/app/templates/theme3/
-/app/templates/theme3_v5/css/
-/app/templates/theme3_v5/img/
-/app/templates/theme3_v5/js/
-/app/templates/theme3_v5/application.css
-/app/templates/theme3_v5/iframe.html
-/app/templates/theme3_v5/libraries.html
-/app/templates/theme3_v5/login.html
-/app/templates/theme3_v5/public.html
 
 **/app/templates/adminbs5/
-**/app/templates/adminbs5_t/
-**/app/templates/adminbs5_v2/
-**/app/templates/theme4/
-**/app/templates/theme4_v5/
+**/app/templates/adminbs5_v8/
 
 **/files
 /lib/**
