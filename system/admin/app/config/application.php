@@ -5,13 +5,14 @@ return [
         'language' => 'pt',
         'application' => 'ludsce',
         'title' => 'Ludes CE',
-        'theme' => 'adminbs5_v2',
+        'theme' => 'adminbs5_v8',
         'seed' => 'odfu6asnodf8as',
         'rest_key' => '',
-        'multiunit' => '0',
-        'public_view' => '0',
+        'multiunit' => '1',
+        'public_view' => '0', // Habilita a visualização de páginas públicas. Quando ligado muda a imagem para o fundo geral
         'public_entry' => '',
         'debug' => '0',
+        'strict_request' => '0',
         'multi_lang' => '1',
         'require_terms' => '0',
         'concurrent_sessions' => '1',
@@ -19,6 +20,9 @@ return [
           'pt' => 'Português',
           'en' => 'English',
           'es' => 'Español',
+          'fr' => 'Français',
+          'de' => 'Deutsch',
+          'it' => 'Italiano',
         ],
         'multi_database' => '0',
         'validate_strong_pass' => '1',
@@ -40,13 +44,26 @@ return [
           'SystemPasswordResetForm',
           'SystemRegistrationForm',
           'SystemPasswordRenewalForm',
+          'SystemConcurrentAccessView',
+          'SystemInvalidAccessView'
         ],
+        'admin_groups' => ['1'],
+        /*'allowed_unit_groups' => ['3'],*/
         'user_register' => '1',
         'reset_password' => '1',
         'default_groups' => '2',
         'default_screen' => '30',
         'default_units' => '1',
+        'user_deletion' => '1'
     ],
+    'hooks' =>
+    [
+        'after_user_creation' => [],
+        'after_unit_creation' => [],
+        'after_login' => [],
+        'before_logout' => []
+    ]
+    ,
     'highlight' => [
         'comment' => '#808080',
         'default' => '#FFFFFF',
@@ -57,11 +74,6 @@ return [
     'login' => [
         'logo' => 'app/images/icon.png',
         'background' => 'app/images/thumb-1920-698137.jpg'
-    ],
-    'system' => [
-         'system_version' => '1.0.0'
-        ,'formdin_min_version'=>'5.1.1'
-        ,'adianti_min_version'=>'8.0.0'
     ],
     'template' => [
         'navbar' => [
@@ -74,15 +86,29 @@ return [
             'has_wiki' => '0',
             'has_news' => '0',
             'has_menu_mode_switch' => '1',
-            'has_main_mode_switch' => '1'
+            'has_main_mode_switch' => '1',
+            'has_master_menu' => '0',  // 0 = menu lateral, 1 = menu icones
+            'always_collapse' => '0',
+            'allow_page_tabs' => '0',
+            'only_top_menu' => '0', // Habilita o menu superior
+            'header_display' => "visible",
+            'footer_display' => "visible"
         ],
         'dialogs' => [
             'use_swal' => '1'
         ],
         'theme' => [
-            'menu_dark_color' => 'rgb(29 45 83)',
+            /*'menu_dark_color' => 'rgb(29 45 83)',*/
+            'login_mode'  => 'light',
             'menu_mode'  => 'dark',
-            'main_mode'  => 'light'
+            'main_mode'  => 'light',
+            'box_layout' => '0'
         ]
+    ],
+    'system' =>  [
+        'system_version' => '8.7.0.1',
+        'system_name_sub'=> 'Fork do Adianti FrameWork',
+        'adianti_min_version'=> '8.7.0.1',
+        'formdin_min_version'=> '5.15.2',
     ]
 ];
