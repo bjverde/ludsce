@@ -1,0 +1,95 @@
+<menu>
+    <menuitem label='_t{Start}'>
+        <icon>fas:home fa-fw</icon>
+        <action>WelcomeDashboardView</action>
+    </menuitem>
+    <menuitem label='_t{Administration}'>
+        <icon>fas:sliders fa-fw</icon>
+        <menu>
+              <menuitem label='Dashboard'>
+                  <icon>fas:tachometer-alt fa-fw</icon>
+                  <action>SystemAdministrationDashboard</action>
+              </menuitem>
+              <menuitem label='_t{Programs}'>
+                  <icon>far:file-code fa-fw</icon>
+                  <action>SystemProgramList</action>
+              </menuitem>
+              <menuitem label='_t{Groups}'>
+                  <icon>fas:users fa-fw</icon>
+                  <action>SystemGroupList</action>
+              </menuitem>
+              <menuitem label='_t{Units}'>
+                  <icon>fas:university fa-fw</icon>
+                  <action>SystemUnitList</action>
+              </menuitem>
+              <menuitem label='_t{Roles}'>
+                  <icon>fas:user-tag fa-fw</icon>
+                  <action>SystemRoleList</action>
+              </menuitem>
+              <menuitem label='_t{Users}'>
+                  <icon>fas:user fa-fw</icon>
+                  <action>SystemUserList</action>
+              </menuitem>
+              <menuitem label='_t{Preferences}'>
+                  <icon>fas:cog fa-fw</icon>
+                  <action>SystemPreferenceForm#method=onEdit</action>
+              </menuitem>
+        </menu>
+    </menuitem>
+    
+    <menuitem label='Logs'>
+        <icon>fas:desktop fa-fw</icon>
+        <menu>
+              <menuitem label='Dashboard'>
+                  <icon>fas:tachometer-alt fa-fw</icon>
+                  <action>SystemLogDashboard</action>
+              </menuitem>
+              <menuitem label='_t{Access Log}'>
+                  <icon>fas:key fa-fw</icon>
+                  <action>SystemAccessLogList</action>
+              </menuitem>
+              <menuitem label='_t{Change Log}'>
+                  <icon>fas:film fa-fw</icon>
+                  <action>SystemChangeLogView</action>
+              </menuitem>
+              <menuitem label='_t{SQL Log}'>
+                  <icon>fas:database fa-fw</icon>
+                  <action>SystemSqlLogList</action>
+              </menuitem>
+              <menuitem label='_t{Request Log}'>
+                  <icon>fas:globe fa-fw</icon>
+                  <action>SystemRequestLogList</action>
+              </menuitem>
+              <menuitem label='_t{PHP Log}'>
+                  <icon>fas:exclamation-triangle fa-fw</icon>
+                  <action>SystemPHPErrorLogView</action>
+              </menuitem>
+              <menuitem label='Session vars'>
+                  <icon>fas:code fa-fw</icon>
+                  <action>SystemSessionVarsView</action>
+              </menuitem>
+        </menu>
+    </menuitem>
+        
+    <menuitem label='Common pages'>
+        <menu>
+            <menuitem label='Common page 1'>
+                <icon></icon>
+                <action>CommonPage</action>
+            </menuitem>
+            <menuitem label='Common page 2'>
+                <icon></icon>
+                <action>CommonPage</action>
+            </menuitem>
+            <menuitem label='Common page 3'>
+                <icon></icon>
+                <action>CommonPage</action>
+            </menuitem>
+        </menu>
+    </menuitem>
+    
+    <menuitem label='Logout'>
+        <action>LoginForm#method=onLogout#static=1</action>
+        <icon>fas:sign-out-alt fa-fw</icon>
+    </menuitem>
+</menu>
