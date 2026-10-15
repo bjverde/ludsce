@@ -22,6 +22,7 @@ define('PATH', dirname(__FILE__));
 setlocale(LC_ALL, 'C');
 
 //--- FORMDIN 5 START ---------------------------------------------------------
+$ini = AdiantiApplicationConfig::get();
 FormDinHelper::verifyFormDinMinimumVersion($ini['system']['formdin_min_version']);
 FormDinHelper::verifyMinimumVersionAdiantiFrameWorkToSystem($ini['system']['adianti_min_version']);
 
