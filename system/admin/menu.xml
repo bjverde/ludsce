@@ -40,6 +40,10 @@
                   <icon>fas:user fa-fw</icon>
                   <action>SystemUserList</action>
               </menuitem>
+              <menuitem label='_t{Unit users}'>
+                  <icon>fas:users-cog fa-fw</icon>
+                  <action>SystemUnitUsersList</action>
+              </menuitem>
               <menuitem label='_t{Page management}'>
                     <icon>fab:wikipedia-w fa-fw</icon>
                     <action>SystemWikiList</action>
