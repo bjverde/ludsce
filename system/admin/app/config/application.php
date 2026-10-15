@@ -8,7 +8,7 @@ return [
         'theme' => 'adminbs5_v8',
         'seed' => 'odfu6asnodf8as',
         'rest_key' => '',
-        'multiunit' => '1',
+        'multiunit' => '0',
         'public_view' => '0', // Habilita a visualização de páginas públicas. Quando ligado muda a imagem para o fundo geral
         'public_entry' => '',
         'debug' => '0',
