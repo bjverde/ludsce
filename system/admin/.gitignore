@@ -1,116 +1,156 @@
 # Ignore all directories, and all sub-directories, and it's contents:
 # Ignore * all files in directories
-# Ignore **/ alll subdirectories 
+# Ignore **/ alll subdirectories
+# inicie com / para pegar o caminho sem isso será considerado recursivo
 
-.vscode/
+# Agent files
+/.agents/
+/.agent/
+/.claude/
+/.antigravity/
+/.gemini/
+/AGENTS.md
+/CLAUDE.md
+
+# VsCode files
+/.vscode/
+
+# Eclipse files
 /.settings/
+/.vscode/
 /.project
 /.buildpath
 
-# System Files
-.git
-.gitattributes
-.gitlab-ci.yml
-.DS_Store
+#Arquivos compactados
+*.zip
+*.tar.gz
+*.tar
 
-# Temp files
-_*
 
-#Projeto FormDin5 com Adianti
+#Projeto em Adianti Fork template 8.4.0.1 com FormDin5 v5.9
 /app/config/communication.ini
 /app/config/communication.php
 /app/config/framework_hashes.php
 /app/config/ldap.ini
 /app/config/log.ini
 /app/config/log.php
+/app/config/palettes.php
 /app/config/permission.ini
 /app/config/permission.php
 /app/config/sample.ini
 /app/config/sample.php
+/app/config/translations.json
 /app/config/unit_a.ini
 /app/config/unit_a.php
 /app/config/unit_b.ini
 /app/config/unit_b.php
 /app/config/unit_database.php
 
-**/app/control/admin
-**/app/control/start
-**/app/control/communication
-**/app/control/log
-**/app/control/public/PublicView.php
-**/app/control/public/PublicView.class.php
-**/app/control/CommonPage.php
-**/app/control/CommonPage.class.php
-**/app/control/MessageList.class.php
-**/app/control/NotificationList.class.php
-**/app/control/SearchBox.php
-**/app/control/SearchBox.class.php
-**/app/control/SearchInputBox.class.php
-!/app/control/WelcomeView.php
+/app/control/admin/
+#app/control/builder
+/app/control/start/
+/app/control/communication/
+/app/control/log/
+/app/control/public/PublicView.php
+/app/control/public/SystemConcurrentAccessView.php
+/app/control/CommonPage.php
+/app/control/MessageList.class.php
+/app/control/NotificationList.class.php
+/app/control/SearchBox.php
+/app/control/SearchInputBox.class.php
 !/app/control/WelcomeView.class.php
 
-**/app/database/communication.db
-**/app/database/communication.sql
-**/app/database/log-update.sql
-**/app/database/log.db
-**/app/database/log.sql
-**/app/database/permission-update.sql
-**/app/database/permission.asta
-**/app/database/permission.sql
-**/app/database/permission.xml
-**/app/database/unit_a.db
-**/app/database/unit_b.db
+/app/database/communication.db
+/app/database/communication.sql
+/app/database/communication-update.sql
+/app/database/log-update.sql
+/app/database/log.db
+/app/database/log.sql
+/app/database/permission-update.sql
+/app/database/permission.asta
+/app/database/permission.db
+/app/database/permission.sql
+/app/database/permission.xml
+/app/database/unit_a.db
+/app/database/unit_b.db
 
-**/app/images
+/app/images
 
-**/app/lib/barcode
-**/app/lib/html
-**/app/lib/include
-**/app/lib/menu/ApplicationMenuEditorItemRenderer.php
-**/app/lib/menu/ApplicationMenuEditorRenderer.php
-**/app/lib/pdf
-**/app/lib/reports
-**/app/lib/util/
-**/app/lib/validator
-**/app/lib/widget
+/app/lib/barcode
+/app/lib/html
+/app/lib/include
+#/app/lib/menu/
+/app/lib/menu/ApplicationMenuEditorItemRenderer.php
+/app/lib/menu/ApplicationMenuEditorRenderer.php
+/app/lib/menu/AdiantiNavBarParser.php
+/app/lib/pdf/
+/app/lib/reports/
+/app/lib/util/
+/app/lib/validator/
+/app/lib/widget/
+/app/lib/widget/builder/
 
-**/app/model/admin/
-**/app/model/communication
-**/app/model/log
-
-**/app/output
-**/app/reports
+/app/model/admin/
+/app/model/communication
+/app/model/log
+/app/output
+/app/reports
 
 /app/resources/*
-!/app/resources/system_welcome_en.html
-!/app/resources/system_welcome_es.html
-!/app/resources/system_welcome_pt.html
 
-**/app/service/
+/app/service/auth/
+/app/service/cli/
+/app/service/jobs/
+/app/service/log/
+/app/service/rest/
+/app/service/system/
 
-**/app/templates/adminbs5/
-**/app/templates/adminbs5_v8/
+/app/templates/adminbs5/
+/app/templates/adminbs5_t/
+/app/templates/adminbs5_v3/
+/app/templates/adminbs5_v4/
+/app/templates/adminbs5_v5/
+/app/templates/adminbs5_v6/
+/app/templates/adminbs5_v8/
+/app/templates/theme3/
+/app/templates/theme3_v5/
+/app/templates/theme4/
+/app/templates/theme4_v5/
+/app/templates/theme-builder/
+/app/templates/theme_formdinv/
+/app/templates/theme3-adminlte3/
+/app/templates/mpdft_material/
+/app/templates/mpdft_theme_adianti/
+/app/templates/mpdft_theme_adianti_old/
 
-**/files
-/lib/**
-**/rest
-**/tmp
-**/vendor
+
+/app/view/*
+!/app/view/.htaccess
+
+/files/
+/lib/
+/rest/
+/tmp/*
+!/tmp/.htaccess
+/vendor/
 
 
-**/composer.json
-**/composer.lock
-**/cmd.php
-**/crontab.php
-**/download.php
-**/engine.php
-**/htaccess-dist
-LICENSE
-**/menu-dist.xml
-**/menu-public.xml
-**/menu-top.xml
-**/menu-bottom.xml
-**/menu-basic.xml
-**/rest-secure.php.dist
-**/rest.php.dist
-**/soap.php.dist
+/.htaccess
+/composer.json
+/composer.lock
+/cmd.php
+/crontab.php
+/download.php
+/engine.php
+/index.php
+/init.php
+/LICENSE
+/htaccess-dist
+/menu-sem-acesso.xml
+/menu-dist.xml
+/menu-public.xml
+/mobile.php
+/rest-secure.php.dist
+/rest.php
+/rest.php.dist
+/soap.php.dist
