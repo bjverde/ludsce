@@ -1,4 +1,7 @@
-AuthUserFile /root/.htpasswd
-AuthType Basic
-AuthName "restricted area"
-require valid-user
+<IfModule !mod_authz_core.c>
+    Order deny,allow
+    Deny from all
+</IfModule>
+<IfModule mod_authz_core.c>
+    Require all denied
+</IfModule>
