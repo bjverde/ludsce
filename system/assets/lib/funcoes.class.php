@@ -88,19 +88,17 @@ class funcoes
         echo '<!-- Wrapper for slides -->'.PHP_EOL;
         echo '      <div class="carousel-inner">'.PHP_EOL;
         foreach ($arrListaArquivos as $indice => $arquivo) {
-            $class = 'item';
-            if( $indice==0 ){
-                $class = 'item active';
-            }
+            $class = ($indice === 0) ? 'item active' : 'item';
             echo '    <div class="'.$class.'">'.PHP_EOL;
-            $parteArquivo = explode('.',$arquivo);
-            if(end($parteArquivo)=='mp4'){
+            $ext = strtolower(pathinfo($arquivo, PATHINFO_EXTENSION));
+            $safeArquivo = htmlspecialchars($arquivo, ENT_QUOTES, 'UTF-8');
+            if ($ext === 'mp4' || $ext === 'webm' || $ext === 'ogg') {
                 echo '      <video class="videomidiatv" autoplay loop muted controls>'.PHP_EOL;
-                echo '         <source src="'.$arquivo.'" type="video/mp4">'.PHP_EOL;
+                echo '         <source src="'.$safeArquivo.'" type="video/'.$ext.'">'.PHP_EOL;
                 echo '         Your browser does not support HTML video.'.PHP_EOL;
                 echo '      </video>'.PHP_EOL;
             }else{
-                echo '      <img src="'.$arquivo.'" class="imgmidiatv">'.PHP_EOL;
+                echo '      <img src="'.$safeArquivo.'" class="imgmidiatv">'.PHP_EOL;
             }
             echo '    </div>'.PHP_EOL;
         }
@@ -148,7 +146,9 @@ class funcoes
      */
     public static function showBodyOnLoadJsFuncition($config)
     {
-        echo 'onload="info(\''.$config->show_title_bar.'\',\''.$config->show_clock.'\')"';
+        $showTitleBar = htmlspecialchars($config->show_title_bar ?? 'N', ENT_QUOTES, 'UTF-8');
+        $showClock    = htmlspecialchars($config->show_clock ?? 'N', ENT_QUOTES, 'UTF-8');
+        echo 'onload="info(\''.$showTitleBar.'\',\''.$showClock.'\')"';
     }
 
     /**
@@ -161,7 +161,8 @@ class funcoes
     {
         echo '          <div id="app_header_left">'.PHP_EOL;
         if( !empty($config->logo_file) ){
-            echo '              <img class="imglogo" src="admin/'.$config->logo_file.'">'.PHP_EOL;
+            $safeLogo = htmlspecialchars($config->logo_file, ENT_QUOTES, 'UTF-8');
+            echo '              <img class="imglogo" src="admin/'.$safeLogo.'">'.PHP_EOL;
         }
         echo '          </div>'.PHP_EOL;
     }
@@ -183,7 +184,7 @@ class funcoes
             self::showTitleBarLogo($config);
             echo '          <div id="app_header_title">'.PHP_EOL;
             echo '              <div id="app_header_title_main">'.PHP_EOL;
-            echo $config->name_title.PHP_EOL;
+            echo htmlspecialchars($config->name_title ?? '', ENT_QUOTES, 'UTF-8').PHP_EOL;
             echo '              </div>'.PHP_EOL;
             echo '          </div>'.PHP_EOL;
             echo '          <div id="app_header_login">'.PHP_EOL;

@@ -57,7 +57,7 @@ $listArquivos = funcoes::recuperarListaArquivosComCaminho($listArquivosBanco);
 ?>
 
 <div id="container">
-  <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="<?php echo $config->interval; ?>">
+  <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="<?php echo (int)($config->interval ?? 5000); ?>">
     <?php 
     funcoes::showCarousel($listArquivos);
     ?>

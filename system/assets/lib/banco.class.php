@@ -167,11 +167,26 @@ class banco
                       ,interval
                       ,show_info
                 from config
-                where id = 1";
+                where id = :id";
         $sth = $conn->prepare($sql);
+        $sth->bindValue(':id', 1, PDO::PARAM_INT);
         $sth->execute();
-        $result = $sth->fetchAll();
-        return $result[0];
+        $config = $sth->fetch(PDO::FETCH_OBJ);
+
+        if (!$config) {
+            $config = (object) [
+                'show_title_bar'  => 'N',
+                'title_bar_color' => '#b80c1f',
+                'name_title'      => 'LUDS',
+                'color_name'      => '#ffffff',
+                'logo_file'       => null,
+                'show_clock'      => 'N',
+                'interval'        => 5000,
+                'show_info'       => 'N'
+            ];
+        }
+
+        return $config;
     }
 
     /**
@@ -193,14 +208,16 @@ class banco
         $sql = "select img_caminho from arquivos 
                 where dt_exclusao is null
                   and stAtivo = 'S'
-                  and dt_inicio <= '".$dataHoraAtual."'
-                  and '".$dataHoraAtual."' <= dt_fim
+                  and dt_inicio <= :dt_inicio
+                  and :dt_fim <= dt_fim
                   order by nrordem";
         $sth = $conn->prepare($sql);
+        $sth->bindValue(':dt_inicio', $dataHoraAtual);
+        $sth->bindValue(':dt_fim', $dataHoraAtual);
         $sth->execute();
-        $result = $sth->fetchAll();
+        $result = $sth->fetchAll(PDO::FETCH_OBJ);
 
-        return $result;
+        return $result ?: [];
     }
 }
 
