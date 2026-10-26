@@ -1,5 +1,14 @@
 <?php
 
+/**
+ * Classe responsável pelo gerenciamento de conexão e consultas PDO ao banco de dados
+ *
+ * Suporta exclusivamente conexões nativas PDO para os SGBDs:
+ * SQLite, MySQL, PostgreSQL, SQL Server, Oracle e Firebird.
+ *
+ * @package Luds
+ * @subpackage Lib
+ */
 class banco
 {
     const DBMS_FIREBIRD = 'ibase';
@@ -9,17 +18,28 @@ class banco
     const DBMS_SQLITE   = 'sqlite';
     const DBMS_SQLSERVER= 'sqlsrv';
 
+    /**
+     * Tipo de SGBD configurado na instância
+     *
+     * @var string|null
+     */
     private $dbms = null;
 
+    /**
+     * Construtor da classe banco
+     *
+     * @param string $dbms Tipo de SGBD (ex: sqlite, mysql, pgsql, sqlsrv, oracle, ibase)
+     * @throws InvalidArgumentException Se o DBMS informado não for suportado via PDO
+     */
     public function __construct($dbms)    
     {
         $this->setDbms($dbms);
     }
 
     /**
-     * Retorna um array com o tipo de SGBD e descrição suportados via PDO
+     * Retorna a lista de tipos de SGBD suportados nativamente via PDO
      *
-     * @return array
+     * @return array<int, string> Lista com identificadores dos bancos suportados
      */
     public static function getListDBMS()
     {
@@ -33,11 +53,23 @@ class banco
         ];
     }
 
+    /**
+     * Retorna o tipo de SGBD atualmente configurado
+     *
+     * @return string|null Identificador do SGBD configurado
+     */
     public function getDbms()
     {
-        return  $this->dbms;
+        return $this->dbms;
     }
 
+    /**
+     * Define o tipo de SGBD a ser utilizado, validando se é suportado via PDO
+     *
+     * @param string $dbms Identificador do SGBD (suporta aliases como firebird e fbird)
+     * @return void
+     * @throws InvalidArgumentException Se o tipo informado não for suportado via PDO
+     */
     public function setDbms($dbms)
     {
         if ($dbms === 'firebird' || $dbms === 'fbird') {
@@ -51,6 +83,18 @@ class banco
         $this->dbms = $dbms;
     }
 
+    /**
+     * Cria e retorna uma nova instância de conexão PDO de acordo com o SGBD configurado
+     *
+     * @param string|null $servidor Endereço do servidor/host de banco de dados
+     * @param string $banco Nome da base de dados ou caminho do arquivo SQLite
+     * @param string|null $usuario Usuário para autenticação no banco
+     * @param string|null $senha Senha para autenticação no banco
+     * @param int|string|null $porta Porta de conexão opcional
+     * @return PDO Instância de conexão PDO configurada
+     * @throws InvalidArgumentException Se o SGBD configurado não for suportado
+     * @throws PDOException Se ocorrer erro ao instanciar a conexão PDO
+     */
     public function getPdoConnect($servidor, $banco, $usuario, $senha, $porta = null)
     {
         switch ($this->dbms) {
@@ -91,13 +135,27 @@ class banco
         return $conn;
     }
 
-    public function getConnectDatabase(){
-        $banco= __DIR__.'/../database/maindatabase.db';
-        $conn = $this->getPdoConnect(null,$banco,null,null);
+    /**
+     * Retorna a conexão PDO com o banco de dados principal da aplicação
+     *
+     * @return PDO Conexão PDO configurada
+     * @throws PDOException Se ocorrer erro ao conectar
+     */
+    public function getConnectDatabase()
+    {
+        $banco = __DIR__ . '/../database/maindatabase.db';
+        $conn = $this->getPdoConnect(null, $banco, null, null);
         return $conn;
     }
 
-    public function getConfig(){
+    /**
+     * Recupera as configurações visuais e operacionais do player
+     *
+     * @return object Registro de configuração (id = 1) contendo opções de barra de título, cores, intervalo, etc.
+     * @throws PDOException Se ocorrer erro na execução da consulta SQL
+     */
+    public function getConfig()
+    {
         $conn = $this->getConnectDatabase();
 
         $sql = "select show_title_bar
@@ -116,7 +174,16 @@ class banco
         return $result[0];
     }
 
-    public function getListArquivos(){
+    /**
+     * Recupera a lista de arquivos de mídia ativos e válidos para a data/hora atual
+     *
+     * Filtra apenas registros ativos (stAtivo = 'S'), não excluídos e dentro do período de vigência.
+     *
+     * @return array<int, object> Lista de objetos contendo os caminhos das mídias (img_caminho) ordenados por nrordem
+     * @throws PDOException Se ocorrer erro na execução da consulta SQL
+     */
+    public function getListArquivos()
+    {
         $dateTime = new DateTime();
         $dateTime->setTimezone(new DateTimeZone('America/Sao_Paulo'));
         $dataHoraAtual = $dateTime->format('Y-m-d H:i:s');

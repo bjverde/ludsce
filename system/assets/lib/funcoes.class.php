@@ -1,15 +1,31 @@
 <?php
 
+/**
+ * Classe utilitária com funções auxiliares para exibição do carrossel e barra de títulos
+ *
+ * Fornece métodos estáticos para formatação de caminhos de arquivos, cálculo de tempo de refresh,
+ * renderização de indicadores, slides de imagens/vídeos e barra de cabeçalho do player.
+ *
+ * @package Luds
+ * @subpackage Lib
+ */
 class funcoes
 {
+    /**
+     * Versão atual da aplicação/player
+     *
+     * @var string
+     */
     const VERSAO_SISTEMA = "0.5";
 
     /**
-     * Calculate the time to load everything
+     * Calcula o tempo total em segundos para recarga automática da página (slideshow completo)
      *
-     * @param int|float $timeMilliseconds
-     * @param array $listFiles
-     * @return int
+     * Retorna um tempo de segurança de 30 segundos caso não haja arquivos ativos na lista.
+     *
+     * @param int|float $timeMilliseconds Tempo de transição de cada slide em milissegundos
+     * @param array<int, string> $listFiles Lista de arquivos/slides a serem exibidos
+     * @return int Tempo total em segundos para atualização da página via meta-refresh
      */
     public static function getTotalTimeRefreshSlideShow($timeMilliseconds, $listFiles)
     {
@@ -21,6 +37,12 @@ class funcoes
         return $cont * $intervalSeconds;
     }
 
+    /**
+     * Constrói a lista de caminhos relativos dos arquivos prefixando com o diretório 'admin/'
+     *
+     * @param array<int, object> $listArquivosBanco Lista de registros vindos do banco de dados com atributo img_caminho
+     * @return array<int, string> Lista de caminhos relativos para acesso público aos arquivos
+     */
     public static function recuperarListaArquivosComCaminho($listArquivosBanco)
     {
         $listArquivos = array();
@@ -30,6 +52,12 @@ class funcoes
         return $listArquivos;
     }
 
+    /**
+     * Renderiza o HTML dos indicadores (bolinhas/tracinhos de navegação) do carrossel Bootstrap
+     *
+     * @param array<int, string> $arrListaArquivos Lista com caminhos dos arquivos do carrossel
+     * @return void
+     */
     public static function indicadores($arrListaArquivos)
     {
         $cont =  count( $arrListaArquivos );
@@ -47,6 +75,14 @@ class funcoes
         }
     }
     
+    /**
+     * Renderiza o container e os itens de slide (imagens ou vídeos HTML5) do carrossel Bootstrap
+     *
+     * Identifica arquivos com extensão .mp4 para renderizar a tag <video>, e as demais mídias como <img>.
+     *
+     * @param array<int, string> $arrListaArquivos Lista com caminhos dos arquivos a serem exibidos
+     * @return void
+     */
     public static function wrapper($arrListaArquivos)
     {
         echo '<!-- Wrapper for slides -->'.PHP_EOL;
@@ -71,6 +107,11 @@ class funcoes
         echo '      </div>'.PHP_EOL;
     }
 
+    /**
+     * Renderiza o slide padrão informando que nenhuma imagem foi cadastrada ou está ativa
+     *
+     * @return void
+     */
     public static function semImg()
     {
         echo '      <div class="carousel-inner">'.PHP_EOL;
@@ -80,6 +121,14 @@ class funcoes
         echo '      </div>'.PHP_EOL;
     }
 
+    /**
+     * Controla a exibição do carrossel de mídias
+     *
+     * Caso a lista esteja vazia, invoca semImg(); caso contrário, renderiza os indicadores e slides.
+     *
+     * @param array<int, string> $arrListaArquivos Lista com caminhos dos arquivos do carrossel
+     * @return void
+     */
     public static function showCarousel($arrListaArquivos)
     {
         $cont =  count( $arrListaArquivos );
@@ -91,11 +140,23 @@ class funcoes
         }
     }
 
+    /**
+     * Imprime o atributo onload do elemento <body> chamando a função JavaScript info()
+     *
+     * @param object $config Objeto com configurações do sistema (show_title_bar, show_clock)
+     * @return void
+     */
     public static function showBodyOnLoadJsFuncition($config)
     {
         echo 'onload="info(\''.$config->show_title_bar.'\',\''.$config->show_clock.'\')"';
     }
 
+    /**
+     * Renderiza o HTML da logo na barra de títulos caso esteja configurada
+     *
+     * @param object $config Objeto com configurações do sistema (logo_file)
+     * @return void
+     */
     public static function showTitleBarLogo($config)
     {
         echo '          <div id="app_header_left">'.PHP_EOL;
@@ -105,6 +166,14 @@ class funcoes
         echo '          </div>'.PHP_EOL;
     }
 
+    /**
+     * Renderiza a barra de título superior completa (logo, título principal e relógio)
+     *
+     * A barra só é impressa se show_title_bar estiver configurado como 'Y'.
+     *
+     * @param object $config Objeto com configurações do sistema (show_title_bar, name_title, etc.)
+     * @return void
+     */
     public static function showTitleBar($config)
     {
         if( $config->show_title_bar == 'Y' ){
@@ -119,7 +188,7 @@ class funcoes
             echo '          </div>'.PHP_EOL;
             echo '          <div id="app_header_login">'.PHP_EOL;
             echo '              <div id="clock"></div>'.PHP_EOL;
-            echo '              <spam id="resolucao"></spam>'.PHP_EOL;
+            echo '              <span id="resolucao"></span>'.PHP_EOL;
             echo '          </div>'.PHP_EOL;
             echo '      </div>'.PHP_EOL;
             echo '  </div>'.PHP_EOL;
