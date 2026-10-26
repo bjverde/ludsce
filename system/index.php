@@ -24,7 +24,30 @@ $listArquivos = funcoes::recuperarListaArquivosComCaminho($listArquivosBanco);
   <script src ="assets/bootstrap/bootstrap.min.js?appver=<?php echo funcoes::VERSAO_SISTEMA; ?>"></script>
   <script src ="assets/js/funcoes.js?appver=<?php echo funcoes::VERSAO_SISTEMA; ?>"></script>
   <link   href="assets/css/style-basic.css?appver=<?php echo funcoes::VERSAO_SISTEMA; ?>" rel="stylesheet" type="text/css">
-  <link   href="assets/css/style-dinamic.css.php?appver=<?php echo funcoes::VERSAO_SISTEMA; ?>" rel="stylesheet" type="text/css">
+  <style>
+    :root {
+      --header_height: 45px;
+      --header_bg: <?php echo htmlspecialchars($config->title_bar_color ?? '#b80c1f', ENT_QUOTES, 'UTF-8'); ?>;
+      --header_color: <?php echo htmlspecialchars($config->color_name ?? '#ffffff', ENT_QUOTES, 'UTF-8'); ?>;
+    }
+    .header-login {
+      color: var(--header_color) !important;
+    }
+    #app_header {
+      background-color: var(--header_bg) !important;
+    }
+    .videomidiatv {
+      display: block;
+      margin: auto auto;
+      height: <?php echo ($config->show_title_bar == 'Y') ? 'calc(100vh - var(--header_height))' : '100vh'; ?> !important;
+      max-height: 100% !important;
+    }
+    .imgmidiatv {
+      margin: auto auto;
+      height: <?php echo ($config->show_title_bar == 'Y') ? 'calc(100vh - var(--header_height))' : '100vh'; ?> !important;
+      max-height: 100% !important;
+    }
+  </style>
 </head>
 
 <body id="dising" <?php funcoes::showBodyOnLoadJsFuncition($config); ?> >
