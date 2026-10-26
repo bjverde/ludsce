@@ -7,15 +7,18 @@ class funcoes
     /**
      * Calculate the time to load everything
      *
-     * @param int $timeMilliseconds
+     * @param int|float $timeMilliseconds
      * @param array $listFiles
      * @return int
      */
     public static function getTotalTimeRefreshSlideShow($timeMilliseconds, $listFiles)
     {
-        $cont  = count( $listFiles );
-        $total = $cont * ($timeMilliseconds/1000);
-        return $total;
+        $cont = count($listFiles);
+        if ($cont === 0) {
+            return 30; // Tempo mínimo de segurança em segundos para buscar novas mídias
+        }
+        $intervalSeconds = max(1, (int)ceil($timeMilliseconds / 1000));
+        return $cont * $intervalSeconds;
     }
 
     public static function recuperarListaArquivosComCaminho($listArquivosBanco)
