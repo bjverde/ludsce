@@ -19,11 +19,11 @@ $listArquivos = funcoes::recuperarListaArquivosComCaminho($listArquivosBanco);
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" type="image/png" href="admin/app/templates/theme3_v4/img/favicon.png"/>
   <title>LUDS</title>
-  <script src ="assets/js/jquery.min.js?appver=<?php echo funcoes::VERSAO_SISTEMA; ?>"></script>
-  <link   href="assets/bootstrap/bootstrap.min.css?appver=<?php echo funcoes::VERSAO_SISTEMA; ?>" rel="stylesheet" type="text/css">
-  <script src ="assets/bootstrap/bootstrap.min.js?appver=<?php echo funcoes::VERSAO_SISTEMA; ?>"></script>
-  <script src ="assets/js/funcoes.js?appver=<?php echo funcoes::VERSAO_SISTEMA; ?>"></script>
-  <link   href="assets/css/style-basic.css?appver=<?php echo funcoes::VERSAO_SISTEMA; ?>" rel="stylesheet" type="text/css">
+  <script src="<?= funcoes::asset('assets/js/jquery.min.js') ?>"></script>
+  <link   href="<?= funcoes::asset('assets/bootstrap/bootstrap.min.css') ?>" rel="stylesheet" type="text/css">
+  <script src="<?= funcoes::asset('assets/bootstrap/bootstrap.min.js') ?>"></script>
+  <script src="<?= funcoes::asset('assets/js/funcoes.js') ?>"></script>
+  <link   href="<?= funcoes::asset('assets/css/style-basic.css') ?>" rel="stylesheet" type="text/css">
   <style>
     :root {
       --header_height: 45px;

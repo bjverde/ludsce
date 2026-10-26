@@ -19,6 +19,24 @@ class funcoes
     const VERSAO_SISTEMA = "0.5";
 
     /**
+     * Gera a URL do asset estático com timestamp de modificação (cache busting automático)
+     *
+     * @param string $path Caminho relativo do arquivo estático a partir de system/
+     * @return string Caminho relativo com sufixo ?v=<timestamp> ou ?v=<VERSAO_SISTEMA>
+     */
+    public static function asset($path)
+    {
+        $cleanPath = ltrim($path, '/\\');
+        $fullPath  = dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . str_replace(['/', '\\'], DIRECTORY_SEPARATOR, $cleanPath);
+
+        $version = (file_exists($fullPath) && is_file($fullPath))
+            ? filemtime($fullPath)
+            : self::VERSAO_SISTEMA;
+
+        return $path . '?v=' . $version;
+    }
+
+    /**
      * Calcula o tempo total em segundos para recarga automática da página (slideshow completo)
      *
      * Retorna um tempo de segurança de 30 segundos caso não haja arquivos ativos na lista.
