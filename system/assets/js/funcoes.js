@@ -2,38 +2,45 @@
 function getResolutionDivContiner()
 {
     let box = document.querySelector('#container');
-    let width = box.offsetWidth;
-    let height = box.offsetHeight;
+    let width = box ? box.offsetWidth : 0;
+    let height = box ? box.offsetHeight : 0;
 
-    resolucao = "Área da Imagem: " + width + " x " + height ;
+    let resolucao = "Área da Imagem: " + width + " x " + height ;
     return resolucao;
 }
 function getResolutionTela()
 {
-    resolucao = "Monitor: " + screen.width + " x " + screen.height ;
+    let resolucao = "Monitor: " + screen.width + " x " + screen.height ;
     return resolucao;
 }
 function getResolutionTelaDisponivel()
 {
-    resolucao = "Tela Disponivel: " + screen.availWidth + " x " + screen.availHeight ;
+    let resolucao = "Tela Disponivel: " + screen.availWidth + " x " + screen.availHeight ;
     return resolucao;
 }
 function getResolutionWindow()
 {
-    resolucao = "Tam. Navegador: " + window.innerWidth + " x " + window.innerHeight;
+    let resolucao = "Tam. Navegador: " + window.innerWidth + " x " + window.innerHeight;
     return resolucao;
 }
-function clock(showTitleBar,showClock)
+function clock(showTitleBar, showClock)
 {
-    if(showTitleBar=='Y' && showClock=='Y'){
-        var clock = document.getElementById('clock');
-        var dataHora = ( (new Date).toLocaleString().substr(0, 17) );
-        setInterval(function () {
-            clock.innerHTML = dataHora;
-        }, 1000);
+    if (showTitleBar == 'Y' && showClock == 'Y') {
+        var clockElem = document.getElementById('clock');
+        if (!clockElem) {
+            return;
+        }
+
+        function updateClock() {
+            var now = new Date();
+            clockElem.innerHTML = now.toLocaleDateString('pt-BR') + ' ' + now.toLocaleTimeString('pt-BR');
+        }
+
+        updateClock();
+        setInterval(updateClock, 1000);
     }
 }
-function info(showTitleBar,showClock) 
+function info(showTitleBar, showClock) 
 {
-    clock(showTitleBar,showClock);
-}
+    clock(showTitleBar, showClock);
+}
